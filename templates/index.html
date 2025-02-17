@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flask Example</title>
+    <title>MT site</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <h1>Hello, {{ user.username }}!</h1>
@@ -11,5 +12,9 @@
             <li>{{ item }}</li>
         {% endfor %}
     </ul>
+    <div class="top_container">
+        <div class="left_container">1</div>
+        <div class="right_container">2</div>
+    </div>
 </body>
 </html>

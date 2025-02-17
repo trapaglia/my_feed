@@ -1,0 +1,18 @@
+.top_container {
+    display: flex;
+    flex-direction: row;
+    /* background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    */
+    border: 1px solid black;
+}
+.left_container {
+    flex-grow: 1;
+    border: 1px solid black; 
+}
+.right_container {
+    flex-grow: 3;
+    border: 1px solid black; 
+}
