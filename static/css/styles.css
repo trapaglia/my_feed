@@ -15,17 +15,30 @@
     min-width: 300px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 .phrase{
-    /* align-self: auto;  */
+    align-items: center;
+    justify-content: center;
+    font-family: "Arial", sans-serif;
     /*align-self: auto;: This is often the easiest and best approach.  It allows the flex item to size itself based on its content along the cross axis.  It will respect min-height, max-height, and height: auto;*/
-    min-height: 100px;
+    
+    min-height: 50px;
+    flex: 1;
+    /* border: 1px solid black;  */
+    display: flex;
+}
+#calendar{
+    min-height: 140px;
+    flex: 2;
 }
 .papers{
-    min-height: 100px;
+    min-height: 50px;
+    flex: 3;
 }
 .cuestionario{
-    min-height: 100px;
+    min-height: 50px;
+    flex: 1;
 }
 
 .right_container {

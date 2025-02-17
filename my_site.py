@@ -1,23 +1,21 @@
 from flask import Flask, render_template, send_from_directory
+import random
 
 app = Flask(__name__)
 
 @app.route('/')
 @app.route('/index')
 def index():
-    user = {'username': 'Matute'}
-    # return render_template('index.html', title='Home', user=user)
-    posts = [
-        {
-            'author': {'username': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }
-    ]
-    return render_template('index.html', title='', user=user, posts=posts)
+    frases = ["Vortelyx do a general body scan",
+              "Focus your energy on your aura goal",
+              "Today focus on the root, sacral chakra",
+              "Today focus on the solar plexus chakra",
+              "Today focus on the heart chakra",
+              "Today focus on the throat chakra",
+              "Today focus on the third eye chakra",
+              "Today focus on the crown chakra",]
+    frase = random.choice(frases)
+    return render_template('index.html', title='', frase=frase)
     # return render_template('index.html', user=user)
 
 @app.route('/css/<path:filename>')
