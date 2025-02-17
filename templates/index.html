@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Example</title>
+</head>
+<body>
+    <h1>Hello, {{ user.username }}!</h1>
+
+    <ul>
+        {% for item in posts %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
