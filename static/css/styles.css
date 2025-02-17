@@ -32,15 +32,19 @@
     flex-grow: 3;
     border: 1px solid black; 
     min-width: 300px;
+    display: flex;
+    flex-direction: column;
 }
 .clima{
     min-height: 100px;
+    flex-grow: 1;
 }
 .pagina_libro{
     min-height: 100px;
 }
 .idioma1{
     min-height: 100px;
+    flex-grow: 1;
 }
 .idioma2{
     min-height: 100px;
