@@ -45,9 +45,16 @@
 .idioma1{
     min-height: 100px;
     flex-grow: 1;
+    border: 1px solid black; 
+}
+iframe {
+    width: 100%;
+    height: 100%;
 }
 .idioma2{
     min-height: 100px;
+    flex-grow: 1;
+    border: 1px solid black; 
 }
 .receta{
     min-height: 100px;
