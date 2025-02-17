@@ -8,11 +8,43 @@
     */
     border: 1px solid black;
 }
+
 .left_container {
     flex-grow: 1;
     border: 1px solid black; 
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
 }
+.phrase{
+    /* align-self: auto;  */
+    /*align-self: auto;: This is often the easiest and best approach.  It allows the flex item to size itself based on its content along the cross axis.  It will respect min-height, max-height, and height: auto;*/
+    min-height: 100px;
+}
+.papers{
+    min-height: 100px;
+}
+.cuestionario{
+    min-height: 100px;
+}
+
 .right_container {
     flex-grow: 3;
     border: 1px solid black; 
+    min-width: 300px;
+}
+.clima{
+    min-height: 100px;
+}
+.pagina_libro{
+    min-height: 100px;
+}
+.idioma1{
+    min-height: 100px;
+}
+.idioma2{
+    min-height: 100px;
+}
+.receta{
+    min-height: 100px;
 }
