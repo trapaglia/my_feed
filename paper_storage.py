@@ -2,7 +2,9 @@ import json
 import os
 from datetime import datetime
 
-STORAGE_FILE = 'papers_database.json'
+STORAGE_FILE = 'static/data/papers_database.json'
+if not os.path.exists(STORAGE_FILE):
+    STORAGE_FILE = '/home/matiasdanmansilla/projects/my_feed/static/data/papers_database.json'
 
 def load_papers():
     if os.path.exists(STORAGE_FILE):

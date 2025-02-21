@@ -1,0 +1,5 @@
+[Fri Feb 21 05:42:53.153803 2025] [wsgi:error] [pid 64935:tid 65031] Buscando papers para: large language models
+[Fri Feb 21 05:43:04.426521 2025] [wsgi:error] [pid 64935:tid 65031] Se encontraron 5 papers para 'large language models'
+[Fri Feb 21 05:43:07.426771 2025] [wsgi:error] [pid 64935:tid 65031] Buscando papers para: artificial intelligence
+[Fri Feb 21 05:43:18.999224 2025] [wsgi:error] [pid 64935:tid 65031] Se encontraron 5 papers para 'artificial intelligence'
+[Fri Feb 21 05:43:22.004896 2025] [wsgi:error] [pid 64935:tid 65031] Se encontraron 10 papers de Google Scholar en total
