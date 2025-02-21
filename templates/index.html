@@ -19,58 +19,34 @@
             <div class="papers">
                 <div class="preview-title">📝 Papers pendientes</div>
                 <div class="papers-container">
-                    <div class="paper-section">
+                    <div class="paper-section" data-source="arxiv">
                         <h3>arXiv Papers</h3>
                         <div class="paper-list">
-                            {% for paper in arxiv_papers %}
-                            <div class="paper-item">
-                                <h4><a href="{{ paper.source_url }}" target="_blank">{{ paper.title }}</a></h4>
-                                <p class="paper-authors">{{ paper.authors }}</p>
-                                <p class="paper-abstract">{{ paper.abstract }}</p>
-                                <div class="paper-meta">
-                                    <span class="paper-date">{{ paper.date }}</span>
-                                    <a href="{{ paper.pdf_url }}" target="_blank" class="paper-pdf">PDF</a>
-                                </div>
+                            <div class="loading-indicator">
+                                <div class="loading-spinner"></div>
+                                <p>Cargando papers de arXiv...</p>
                             </div>
-                            {% endfor %}
                         </div>
                     </div>
-                    <div class="paper-section">
+                    <div class="paper-section" data-source="papers_with_code">
                         <h3>Papers With Code</h3>
                         <div class="paper-list">
-                            {% if papers_with_code %}
-                                {% for paper in papers_with_code %}
-                                <div class="paper-item">
-                                    <h4><a href="{{ paper.source_url }}" target="_blank">{{ paper.title }}</a></h4>
-                                    <p class="paper-authors">{{ paper.authors }}</p>
-                                    <p class="paper-abstract">{{ paper.abstract }}</p>
-                                    <div class="paper-meta">
-                                        <span class="paper-date">{{ paper.date }}</span>
-                                        <div class="paper-links">
-                                            {% if paper.pdf_url %}
-                                            <a href="{{ paper.pdf_url }}" target="_blank" class="paper-pdf">PDF</a>
-                                            {% endif %}
-                                            {% if paper.repository_url %}
-                                            <a href="{{ paper.repository_url }}" target="_blank" class="paper-code">
-                                                <i class="fas fa-code"></i> Repository
-                                            </a>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            {% else %}
-                                <p class="coming-soon">No hay papers disponibles en este momento</p>
-                            {% endif %}
+                            <div class="loading-indicator">
+                                <div class="loading-spinner"></div>
+                                <p>Cargando papers de Papers With Code...</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="paper-section">
+                    <div class="paper-section" data-source="google_scholar">
                         <h3>Google Scholar</h3>
                         <div class="paper-list">
-                            <p class="coming-soon">Próximamente</p>
+                            <div class="loading-indicator">
+                                <div class="loading-spinner"></div>
+                                <p>Cargando papers de Google Scholar...</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="paper-section">
+                    <div class="paper-section" data-source="twitter">
                         <h3>Twitter/X Research</h3>
                         <div class="paper-list">
                             <p class="coming-soon">Próximamente</p>
