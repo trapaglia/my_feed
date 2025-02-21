@@ -50,5 +50,9 @@ def index():
 def css(filename):
     return send_from_directory('css', filename)
 
+@app.route('/js/<path:filename>')
+def js(filename):
+    return send_from_directory('static/js', filename)
+
 if __name__ == '__main__':
     app.run(debug=True)
