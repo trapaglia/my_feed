@@ -3,7 +3,7 @@ import random
 import json
 from datetime import datetime
 import os
-from paper_fetchers import fetch_arxiv_papers
+from paper_fetchers import fetch_arxiv_papers, fetch_papers_with_code
 
 app = Flask(__name__)
 
@@ -82,11 +82,13 @@ def get_daily_phrase():
 @app.route('/index')
 def index():
     arxiv_papers = fetch_arxiv_papers()
+    papers_with_code = fetch_papers_with_code()
     frase_del_dia = get_daily_phrase()
     return render_template('index.html', 
                          title='Daily Inspiration',
                          frase=frase_del_dia,
-                         arxiv_papers=arxiv_papers)
+                         arxiv_papers=arxiv_papers,
+                         papers_with_code=papers_with_code)
     # return render_template('index.html', user=user)
 
 @app.route('/css/<path:filename>')

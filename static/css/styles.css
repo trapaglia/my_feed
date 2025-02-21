@@ -75,9 +75,10 @@ body {
     padding: 15px;
 }
 .papers {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex: 1;
+    min-height: 400px;
+    max-height: 600px;
+    overflow: hidden;
 }
 
 .papers-section {
@@ -514,39 +515,78 @@ iframe, embed {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     padding: 1rem;
-    max-height: 600px;
-    overflow-y: auto;
+    height: 100%;
+    overflow: hidden;
 }
 
 .paper-section {
-    background: #f5f5f5;
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     padding: 1rem;
+    height: 400px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .paper-section h3 {
-    color: #333;
+    color: #fff;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
 }
 
 .paper-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    margin-right: -0.5rem;
+}
+
+.paper-list > * {
+    margin-bottom: 1rem;  /* Espacio entre elementos de la lista */
+}
+
+.paper-list > *:last-child {
+    margin-bottom: 0;  /* Eliminar margen del último elemento */
+}
+
+.paper-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.paper-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.paper-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.paper-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .paper-item {
-    background: white;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 6px;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.paper-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(5px);
 }
 
 .paper-item h4 {
     margin: 0 0 0.5rem 0;
-    color: #2c5282;
+    color: #3498db;
 }
 
 .paper-item h4 a {
@@ -560,13 +600,13 @@ iframe, embed {
 
 .paper-authors {
     font-size: 0.9rem;
-    color: #666;
+    color: rgba(255, 255, 255, 0.7);
     margin: 0.25rem 0;
 }
 
 .paper-abstract {
     font-size: 0.9rem;
-    color: #444;
+    color: rgba(255, 255, 255, 0.9);
     margin: 0.5rem 0;
     line-height: 1.4;
 }
@@ -580,24 +620,30 @@ iframe, embed {
 }
 
 .paper-date {
-    color: #666;
+    color: rgba(255, 255, 255, 0.6);
 }
 
-.paper-pdf {
-    background: #2c5282;
-    color: white;
+.paper-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.paper-pdf, .paper-code {
+    background: rgba(52, 152, 219, 0.2);
+    color: #3498db;
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.paper-pdf:hover {
-    background: #2a4365;
+.paper-pdf:hover, .paper-code:hover {
+    background: rgba(52, 152, 219, 0.3);
 }
 
 .coming-soon {
     text-align: center;
-    color: #666;
+    color: rgba(255, 255, 255, 0.5);
     font-style: italic;
     padding: 2rem;
 }
