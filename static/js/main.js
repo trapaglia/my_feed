@@ -197,4 +197,5 @@ document.addEventListener('DOMContentLoaded', function() {
     loadPapers('arxiv');
     loadPapers('papers_with_code');
     loadPapers('google_scholar');
+    loadPapers('twitter');
 }); 
