@@ -1405,3 +1405,8 @@
 181.116.60.37 - - [21/Feb/2025:04:49:48 +0000] "GET /static/js/main.js HTTP/1.1" 200 1569 "http://34.134.196.199/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0"
 181.116.60.37 - - [21/Feb/2025:04:49:48 +0000] "GET /static/css/styles.css HTTP/1.1" 200 2394 "http://34.134.196.199/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0"
 181.116.60.37 - - [21/Feb/2025:04:49:50 +0000] "GET /static//data/Pensar%20Rapido,%20Pensar%20Despacio.pdf HTTP/1.1" 304 300 "http://34.134.196.199/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0"
+181.116.60.37 - - [21/Feb/2025:04:50:47 +0000] "-" 408 0 "-" "-"
+181.116.60.37 - - [21/Feb/2025:04:50:47 +0000] "-" 408 0 "-" "-"
+78.153.140.149 - - [21/Feb/2025:05:08:55 +0000] "GET /.env HTTP/1.1" 404 419 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36"
+78.153.140.149 - - [21/Feb/2025:05:08:55 +0000] "POST / HTTP/1.1" 405 401 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36"
+193.68.89.10 - - [21/Feb/2025:05:27:24 +0000] "GET / HTTP/1.1" 200 1886 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36 Edg/90.0.818.46"
