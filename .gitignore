@@ -1,3 +1,4 @@
 my_site_env
 .gitignore
 site_env
+daily_phrase.json

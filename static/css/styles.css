@@ -44,10 +44,15 @@ body {
     gap: 20px;
     transition: all 0.3s ease;
 }
-.phrase{
+.phrase {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: min-content;
+    height: auto;
 }
 .daily-message {
     text-align: center;
@@ -55,6 +60,8 @@ body {
     color: beige;
     text-shadow: 2px 2px rgba(109, 109, 187, 0.623);
     font-family: "Lucida Console";
+    padding: 10px;
+    margin: 0;
 }
 .daily-message small {
     display: block;
@@ -86,10 +93,11 @@ body {
     gap: 20px;
     transition: all 0.3s ease;
 }
-.clima{
+.clima {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     padding: 15px;
+    min-height: unset;
 }
 .pagina_libro{
     background-color: rgba(255, 255, 255, 0.05);
@@ -208,7 +216,7 @@ iframe, embed {
 
 .clima.expanded {
     height: auto !important;
-    min-height: 400px !important;
+    min-height: 600px !important;
 }
 
 #calendar.expanded {
@@ -303,4 +311,130 @@ iframe, embed {
     padding: 15px;
     border-radius: 8px;
     background-color: rgba(231, 76, 60, 0.1);
+}
+
+.phrase.expanded {
+    justify-content: flex-start;
+    height: auto !important;
+    min-height: min-content !important;
+}
+
+/* Contenedor para los widgets del clima */
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.weather-daily,
+.weather-hourly {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Ajustes cuando el clima está expandido */
+.clima.expanded .weather-container {
+    flex: 1;
+    height: 100%;
+}
+
+.clima.expanded .weather-daily,
+.clima.expanded .weather-hourly {
+    height: 45%; /* Distribuir el espacio verticalmente */
+    margin: 10px 0;
+}
+
+/* Ajustes cuando el clima está contraído */
+.clima.contracted .weather-container {
+    display: none;
+}
+
+.weather-hourly iframe {
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-top: 10px;
+}
+
+.clima.expanded .weather-hourly iframe {
+    height: 400px;
+}
+
+.weather-hourly {
+    width: 100%;
+    min-height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.weather-hourly > div {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: inherit;
+}
+
+.clima.expanded .weather-hourly {
+    height: 45%;
+    min-height: 400px;
+}
+
+/* Contenedores específicos para cada widget */
+.weather-widget-daily,
+.weather-widget-hourly {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+/* Ajustes específicos para el widget diario */
+.weather-widget-daily {
+    height: auto;
+    min-height: unset;
+}
+
+.weather-widget-daily .weatherwidget-io {
+    height: auto !important;
+    min-height: 100px !important;
+}
+
+/* Ajustes específicos para el widget por hora */
+.weather-widget-hourly {
+    display: none;
+}
+
+/* Ocultar el texto "More forecasts" */
+.weather-widget-hourly #ww_43da8b44c3555_u {
+    display: none !important;
+}
+
+/* Ajustes cuando el clima está expandido */
+.clima.expanded {
+    height: auto !important;
+    min-height: 600px !important;
+}
+
+.clima.expanded .weather-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.clima.expanded .weather-widget-hourly {
+    display: block;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Eliminar las clases que podrían estar interfiriendo */
+.weather-daily,
+.weather-hourly {
+    display: none;
 }

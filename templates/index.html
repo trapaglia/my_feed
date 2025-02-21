@@ -38,12 +38,21 @@
         <div class="right_container">
             <div class="clima">
                 <div class="preview-title">🌤️ Clima</div>
-                <a class="weatherwidget-io" href="https://forecast7.com/es/n31d42n64d19/cordoba/" data-label_1="CÓRDOBA" data-label_2="Cordoba" data-theme="original" >CÓRDOBA Cordoba</a>
-                <script>
-                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-                </script>
-                <div id="ww_dc14686a0c1f8" v='1.3' loc='id'></div>
-                <script async src="https://app3.weatherwidget.org/js/?id=ww_dc14686a0c1f8"></script>
+                <div class="weather-container">
+                    <!-- Widget diario en su propio contenedor -->
+                    <div class="weather-widget-daily">
+                        <a class="weatherwidget-io" href="https://forecast7.com/es/n31d42n64d19/cordoba/" data-label_1="CÓRDOBA" data-label_2="Cordoba" data-theme="original">CÓRDOBA Cordoba</a>
+                        <script>
+                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                        </script>
+                    </div>
+                    
+                    <!-- Widget por hora en su propio contenedor -->
+                    <div class="weather-widget-hourly">
+                        <div id="ww_43da8b44c3555" v='1.3' loc='id' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl3317"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>More forecasts: <a href="https://oneweather.org/buenos_aires/30_days/" id="ww_43da8b44c3555_u" target="_blank">Buenos Aires weather 30 days</a></div>
+                        <script async src="https://app3.weatherwidget.org/js/?id=ww_43da8b44c3555"></script>
+                    </div>
+                </div>
             </div>
             <div class="idioma1">
                 <div class="preview-title">🇯🇵 Japonés del día</div>
