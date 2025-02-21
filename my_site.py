@@ -9,7 +9,11 @@ app = Flask(__name__)
 
 def get_daily_phrase():
     # Ruta al archivo que almacenará la frase del día
-    storage_file = 'daily_phrase.json'
+    base_dir = '/home/matiasdanmansilla/projects/my_feed/'
+    if __name__ == '__main__':
+        base_dir = ''
+    storage_file = os.path.join(base_dir, 'static/data/daily_phrase.json')
+
     
     # Obtener la fecha actual (solo año, mes, día)
     today = datetime.now().strftime('%Y-%m-%d')
