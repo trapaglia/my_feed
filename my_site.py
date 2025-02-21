@@ -155,3 +155,10 @@ def js(filename):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+# Ideas for improvements:
+# Implementar un sistema de filtrado para los papers
+# Agregar un sistema de guardado de papers favoritos
+# Mejorar la sección del cuestionario
+# Implementar la sección de recetas
+# Mejorar la integración con el calendario
