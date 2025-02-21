@@ -1,0 +1,1031 @@
+{
+  "last_update": "2025-02-21T02:27:01.036116",
+  "papers": {
+    "arxiv": [
+      {
+        "title": "LServe: Efficient Long-sequence LLM Serving with Unified Sparse Attention",
+        "authors": "Shang Yang, Junxian Guo, Haotian Tang, Qinghao Hu, Guangxuan Xiao, Jiaming Tang, Yujun Lin, Zhijian Liu, Yao Lu, Song Han",
+        "abstract": "Large language models (LLMs) have shown remarkable potential in processing\nlong sequences, yet efficiently serving these long-context models remains\nchallenging due to the quadratic computational complexity of attention in the\nprefilling stage and the large memory footprint of the KV cache in the de...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14866v1",
+        "source_url": "http://arxiv.org/abs/2502.14866v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.DC",
+          "cs.LG",
+          "cs.PF"
+        ],
+        "fetched_date": "2025-02-21T02:26:30.591669"
+      },
+      {
+        "title": "Interpretable Text Embeddings and Text Similarity Explanation: A Primer",
+        "authors": "Juri Opitz, Lucas Möller, Andrianos Michail, Simon Clematide",
+        "abstract": "Text embeddings and text embedding models are a backbone of many AI and NLP\nsystems, particularly those involving search. However, interpretability\nchallenges persist, especially in explaining obtained similarity scores, which\nis crucial for applications requiring transparency. In this paper, we giv...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14862v1",
+        "source_url": "http://arxiv.org/abs/2502.14862v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.IR"
+        ],
+        "fetched_date": "2025-02-21T02:26:30.591669"
+      },
+      {
+        "title": "Aligning LLMs to Ask Good Questions A Case Study in Clinical Reasoning",
+        "authors": "Shuyue Stella Li, Jimin Mun, Faeze Brahman, Jonathan S. Ilgen, Yulia Tsvetkov, Maarten Sap",
+        "abstract": "Large language models (LLMs) often fail to ask effective questions under\nuncertainty, making them unreliable in domains where proactive\ninformation-gathering is essential for decisionmaking. We present ALFA, a\nframework that improves LLM question-asking by (i) decomposing the notion of a\n\"good\" ques...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14860v1",
+        "source_url": "http://arxiv.org/abs/2502.14860v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL"
+        ],
+        "fetched_date": "2025-02-21T02:26:30.591669"
+      },
+      {
+        "title": "FR-Spec: Accelerating Large-Vocabulary Language Models via Frequency-Ranked Speculative Sampling",
+        "authors": "Weilin Zhao, Tengyu Pan, Xu Han, Yudi Zhang, Ao Sun, Yuxiang Huang, Kaihuo Zhang, Weilun Zhao, Yuxuan Li, Jianyong Wang, Zhiyuan Liu, Maosong Sun",
+        "abstract": "Speculative sampling has emerged as an important technique for accelerating\nthe auto-regressive generation process of large language models (LLMs) by\nutilizing a draft-then-verify mechanism to produce multiple tokens per forward\npass. While state-of-the-art speculative sampling methods use only a si...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14856v1",
+        "source_url": "http://arxiv.org/abs/2502.14856v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "fetched_date": "2025-02-21T02:26:30.592639"
+      },
+      {
+        "title": "Prompt-to-Leaderboard",
+        "authors": "Evan Frick, Connor Chen, Joseph Tennyson, Tianle Li, Wei-Lin Chiang, Anastasios N. Angelopoulos, Ion Stoica",
+        "abstract": "Large language model (LLM) evaluations typically rely on aggregated metrics\nlike accuracy or human preference, averaging across users and prompts. This\naveraging obscures user- and prompt-specific variations in model performance.\nTo address this, we propose Prompt-to-Leaderboard (P2L), a method that...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14855v1",
+        "source_url": "http://arxiv.org/abs/2502.14855v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.LG",
+          "cs.CL"
+        ],
+        "fetched_date": "2025-02-21T02:26:30.592639"
+      },
+      {
+        "title": "CLIPPER: Compression enables long-context synthetic data generation",
+        "authors": "Chau Minh Pham, Yapei Chang, Mohit Iyyer",
+        "abstract": "LLM developers are increasingly reliant on synthetic data, but generating\nhigh-quality data for complex long-context reasoning tasks remains challenging.\nWe introduce CLIPPER, a compression-based approach for generating synthetic\ndata tailored to narrative claim verification - a task that requires r...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14854v1",
+        "source_url": "http://arxiv.org/abs/2502.14854v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL"
+        ],
+        "fetched_date": "2025-02-21T02:26:30.592639"
+      },
+      {
+        "title": "GATE: Graph-based Adaptive Tool Evolution Across Diverse Tasks",
+        "authors": "Jianwen Luo, Yiming Huang, Jinxiang Meng, Fangyu Lei, Shizhu He, Xiao Liu, Shanshan Jiang, Bin Dong, Jun Zhao, Kang Liu",
+        "abstract": "Large Language Models (LLMs) have shown great promise in tool-making, yet\nexisting frameworks often struggle to efficiently construct reliable toolsets\nand are limited to single-task settings. To address these challenges, we\npropose GATE (Graph-based Adaptive Tool Evolution), an adaptive framework t...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14848v1",
+        "source_url": "http://arxiv.org/abs/2502.14848v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL",
+          "68T50",
+          "I.2.7"
+        ],
+        "fetched_date": "2025-02-21T02:26:30.592639"
+      },
+      {
+        "title": "Scaling Text-Rich Image Understanding via Code-Guided Synthetic Multimodal Data Generation",
+        "authors": "Yue Yang, Ajay Patel, Matt Deitke, Tanmay Gupta, Luca Weihs, Andrew Head, Mark Yatskar, Chris Callison-Burch, Ranjay Krishna, Aniruddha Kembhavi, Christopher Clark",
+        "abstract": "Reasoning about images with rich text, such as charts and documents, is a\ncritical application of vision-language models (VLMs). However, VLMs often\nstruggle in these domains due to the scarcity of diverse text-rich\nvision-language data. To address this challenge, we present CoSyn, a framework\nthat ...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14846v1",
+        "source_url": "http://arxiv.org/abs/2502.14846v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CV",
+          "cs.CL"
+        ],
+        "fetched_date": "2025-02-21T02:26:30.592639"
+      },
+      {
+        "title": "Revealing and Mitigating Over-Attention in Knowledge Editing",
+        "authors": "Pinzheng Wang, Zecheng Tang, Keyan Zhou, Juntao Li, Qiaoming Zhu, Min Zhang",
+        "abstract": "Large Language Models have demonstrated superior performance across a wide\nrange of tasks, but they still exhibit undesirable errors due to incorrect\nknowledge learned from the training data. To avoid this, knowledge editing\nmethods emerged to precisely edit the specific model knowledge via efficien...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14838v1",
+        "source_url": "http://arxiv.org/abs/2502.14838v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL",
+          "cs.AI"
+        ],
+        "fetched_date": "2025-02-21T02:26:30.592639"
+      },
+      {
+        "title": "Towards Economical Inference: Enabling DeepSeek's Multi-Head Latent Attention in Any Transformer-based LLMs",
+        "authors": "Tao Ji, Bin Guo, Yuanbin Wu, Qipeng Guo, Lixing Shen, Zhan Chen, Xipeng Qiu, Qi Zhang, Tao Gui",
+        "abstract": "Multi-head Latent Attention (MLA) is an innovative architecture proposed by\nDeepSeek, designed to ensure efficient and economical inference by\nsignificantly compressing the Key-Value (KV) cache into a latent vector.\nCompared to MLA, standard LLMs employing Multi-Head Attention (MHA) and its\nvariants...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14837v1",
+        "source_url": "http://arxiv.org/abs/2502.14837v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL",
+          "cs.AI"
+        ],
+        "fetched_date": "2025-02-21T02:26:30.592639"
+      }
+    ],
+    "papers_with_code": [
+      {
+        "title": "High, Medium or Low? Detecting Intensity Variation Among polar synonyms in WordNet",
+        "authors": "No authors listed",
+        "abstract": "For fine-grained sentiment analysis, we need to go beyond zero-one polarity and find a way to compare adjectives (synonyms) that share the same sense. Choice of a word from a set of synonyms, provides a way to select the exact polarity-intensity. For example, choosing to describe a person as benevol...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2016.gwc-1.54.pdf",
+        "source_url": "https://aclanthology.org/2016.gwc-1.54",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Mapping it differently: A solution to the linking challenges",
+        "authors": "No authors listed",
+        "abstract": "This paper reports the work of creating bilingual mappings in English for certain synsets of Hindi wordnet, the need for doing this, the methods adopted and the tools created for the task. Hindi wordnet, which forms the foundation for other Indian language wordnets, has been linked to the English Wo...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2016.gwc-1.57.pdf",
+        "source_url": "https://aclanthology.org/2016.gwc-1.57",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "IndoWordNet Conversion to Web Ontology Language (OWL)",
+        "authors": "No authors listed",
+        "abstract": "WordNet plays a significant role in Linked Open Data (LOD) cloud. It has numerous application ranging from ontology annotation to ontology mapping. IndoWordNet is a linked WordNet connecting 18 Indian language WordNets with Hindi as a source WordNet. The Hindi WordNet was initially developed by link...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2016.gwc-1.37.pdf",
+        "source_url": "https://aclanthology.org/2016.gwc-1.37",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Adaptive Variance Based Label Distribution Learning For Facial Age Estimation",
+        "authors": "No authors listed",
+        "abstract": "Estimating age from a single facial image is a classic and challenging topic in computer vision. One of its most intractable issues is label ambiguity, i.e., face images from adjacent age of the same person are often indistinguishable. Some existing methods adopt distribution learning to tackle this...",
+        "date": "2025-02-21",
+        "pdf_url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123680375.pdf",
+        "source_url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/4328_ECCV_2020_paper.php",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Pretrained Language Models and Backtranslation for English-Basque Biomedical Neural Machine Translation",
+        "authors": "No authors listed",
+        "abstract": "This paper describes the machine translation systems proposed by the University of Technology Sydney Natural Language Processing (UTS_NLP) team for the WMT20 English-Basque biomedical translation tasks. Due to the limited parallel corpora available, we have proposed to train a BERT-fused NMT model t...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2020.wmt-1.89.pdf",
+        "source_url": "https://aclanthology.org/2020.wmt-1.89",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "IndoWordNet::Similarity- Computing Semantic Similarity and Relatedness using IndoWordNet",
+        "authors": "No authors listed",
+        "abstract": "Semantic similarity and relatedness measures play an important role in natural language processing applications. In this paper, we present the IndoWordNet::Similarity tool and interface, designed for computing the semantic similarity and relatedness between two words in IndoWordNet. A java based too...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2016.gwc-1.7.pdf",
+        "source_url": "https://aclanthology.org/2016.gwc-1.7",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Overview of the Seventh Social Media Mining for Health Applications (#SMM4H) Shared Tasks at COLING 2022",
+        "authors": "No authors listed",
+        "abstract": "For the past seven years, the Social Media Mining for Health Applications (#SMM4H) shared tasks have promoted the community-driven development and evaluation of advanced natural language processing systems to detect, extract, and normalize health-related information in public, user-generated content...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.smm4h-1.54.pdf",
+        "source_url": "https://aclanthology.org/2022.smm4h-1.54",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Extractive Summarization System for Annual Reports",
+        "authors": "No authors listed",
+        "abstract": "In this paper, we report on our experiments in building a summarization system for generating summaries from annual reports. We adopt an “extractive” summarization approach in our hybrid system combining neural networks and rules-based algorithms with the expectation that such a system may capture k...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2020.fnp-1.24.pdf",
+        "source_url": "https://aclanthology.org/2020.fnp-1.24",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Analyzing the Domain Robustness of Pretrained Language Models, Layer by Layer",
+        "authors": "No authors listed",
+        "abstract": "The robustness of pretrained language models(PLMs) is generally measured using performance drops on two or more domains. However, we do not yet understand the inherent robustness achieved by contributions from different layers of a PLM. We systematically analyze the robustness of these representatio...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2021.adaptnlp-1.23.pdf",
+        "source_url": "https://aclanthology.org/2021.adaptnlp-1.23",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "生成,推理与排序:基于多任务架构的数学文字题生成(Generating, Reasoning & Ranking: Multitask Learning Framework for Math Word Problem Generation)",
+        "authors": "No authors listed",
+        "abstract": "“数学文字题是一段能反映数学等式潜在逻辑的叙述性文本。成功的数学问题生成在语言生成和教育领域都具有广阔的应用前景。前人的工作大多需要人工标注的模板或关键词作为输入,且未考虑数学表达式本身的特点。本文提出了一种多任务联合训练的问题文本生成模型。我们设计了三个辅助任务,包括数字间关系抽取、数值排序和片段替换预测。他们与生成目标联合训练,用以监督解码器的学习,增强模型对运算逻辑和问题条件的感知能力。实验证明所提方法能有效提升生成的数学文字题的质量。”",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.ccl-1.17.pdf",
+        "source_url": "https://aclanthology.org/2022.ccl-1.17",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Identifying Authors Based on Stylometric measures of Vietnamese texts",
+        "authors": "No authors listed",
+        "abstract": "",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2020.paclic-1.51.pdf",
+        "source_url": "https://aclanthology.org/2020.paclic-1.51",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "UoR-NCL at SemEval-2022 Task 6: Using ensemble loss with BERT for intended sarcasm detection",
+        "authors": "No authors listed",
+        "abstract": "Sarcasm has gained notoriety for being difficult to detect by machine learning systems due to its figurative nature. In this paper, Bidirectional Encoder Representations from Transformers (BERT) model has been used with ensemble loss made of cross-entropy loss and negative log-likelihood loss to cla...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.semeval-1.121.pdf",
+        "source_url": "https://aclanthology.org/2022.semeval-1.121",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Systematic Analysis of Image Schemas in Natural Language through Explainable Multilingual Neural Language Processing",
+        "authors": "No authors listed",
+        "abstract": "In embodied cognition, physical experiences are believed to shape abstract cognition, such as natural language and reasoning. Image schemas were introduced as spatio-temporal cognitive building blocks that capture these recurring sensorimotor experiences. The few existing approaches for automatic de...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.coling-1.493.pdf",
+        "source_url": "https://aclanthology.org/2022.coling-1.493",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Sketchy Scene Captioning: Learning Multi-Level Semantic Information from Sparse Visual Scene Cues",
+        "authors": "No authors listed",
+        "abstract": "“To enrich the research about sketch modality a new task termed Sketchy Scene Captioning isproposed in this paper. This task aims to generate sentence-level and paragraph-level descrip-tions for a sketchy scene. The sentence-level description provides the salient semantics of asketchy scene while th...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2021.ccl-1.104.pdf",
+        "source_url": "https://aclanthology.org/2021.ccl-1.104",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Scaling Within Document Coreference to Long Texts",
+        "authors": "No authors listed",
+        "abstract": "",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2021.findings-acl.343.pdf",
+        "source_url": "https://aclanthology.org/2021.findings-acl.343",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "PANDAS@TamilNLP-ACL2022: Emotion Analysis in Tamil Text using Language Agnostic Embeddings",
+        "authors": "No authors listed",
+        "abstract": "As the world around us continues to become increasingly digital, it has been acknowledged that there is a growing need for emotion analysis of social media content. The task of identifying the emotion in a given text has many practical applications ranging from screening public health to business an...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.dravidianlangtech-1.17.pdf",
+        "source_url": "https://aclanthology.org/2022.dravidianlangtech-1.17",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Upper bounds for Model-Free Row-Sparse Principal Component Analysis",
+        "authors": "No authors listed",
+        "abstract": "Sparse principal component analysis (PCA) is a widely-used dimensionality reduction tool in statistics and machine learning. Most methods mentioned in literature are either heuristics for good primal feasible solutions under statistical assumptions or ADMM-type algorithms with stationary/critical po...",
+        "date": "2025-02-21",
+        "pdf_url": "https://proceedings.icml.cc/static/paper_files/icml/2020/3046-Paper.pdf",
+        "source_url": "https://proceedings.icml.cc/static/paper_files/icml/2020/3046-Paper.pdf",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "FinSBD-2020: The 2nd Shared Task on Sentence Boundary Detection in Unstructured Text in the Financial Domain",
+        "authors": "No authors listed",
+        "abstract": "",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2020.finnlp-1.8.pdf",
+        "source_url": "https://aclanthology.org/2020.finnlp-1.8",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Semi-automatically Annotated Learner Corpus for Russian",
+        "authors": "No authors listed",
+        "abstract": "We present ReLCo— the Revita Learner Corpus—a new semi-automatically annotated learner corpus for Russian. The corpus was collected while several thousand L2 learners were performing exercises using the Revita language-learning system. All errors were detected automatically by the system and annotat...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.lrec-1.88.pdf",
+        "source_url": "https://aclanthology.org/2022.lrec-1.88",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.656604"
+      },
+      {
+        "title": "Design Choices in Crowdsourcing Discourse Relation Annotations: The Effect of Worker Selection and Training",
+        "authors": "No authors listed",
+        "abstract": "Obtaining linguistic annotation from novice crowdworkers is far from trivial. A case in point is the annotation of discourse relations, which is a complicated task. Recent methods have obtained promising results by extracting relation labels from either discourse connectives (DCs) or question-answer...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.lrec-1.231.pdf",
+        "source_url": "https://aclanthology.org/2022.lrec-1.231",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Breeding Fillmore’s Chickens and Hatching the Eggs: Recombining Frames and Roles in Frame-Semantic Parsing",
+        "authors": "No authors listed",
+        "abstract": "Frame-semantic parsers traditionally predict predicates, frames, and semantic roles in a fixed order. This paper explores the ‘chicken-or-egg’ problem of interdependencies between these components theoretically and practically. We introduce a flexible BERT-based sequence labeling architecture that a...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2021.iwcs-1.15.pdf",
+        "source_url": "https://aclanthology.org/2021.iwcs-1.15",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Performance of BERT on Persuasion for Good",
+        "authors": "No authors listed",
+        "abstract": "We consider the task of automatically classifying the persuasion strategy employed by an utterance in a dialog. We base our work on the PERSUASION-FOR-GOOD dataset, which is composed of conversations between crowdworkers trying to convince each other to make donations to a charity. Currently, the be...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2021.icon-main.38.pdf",
+        "source_url": "https://aclanthology.org/2021.icon-main.38",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Towards Speech-only Opinion-level Sentiment Analysis",
+        "authors": "No authors listed",
+        "abstract": "The growing popularity of various forms of Spoken Dialogue Systems (SDS) raises the demand for their capability of implicitly assessing the speaker’s sentiment from speech only. Mapping the latter on user preferences enables to adapt to the user and individualize the requested information while incr...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.lrec-1.215.pdf",
+        "source_url": "https://aclanthology.org/2022.lrec-1.215",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Data Protection, Privacy and US Regulation",
+        "authors": "No authors listed",
+        "abstract": "This paper examines the state of data protection and privacy in the United States. There is no comprehensive federal data protection or data privacy law despite bipartisan and popular support. There are several data protection bills pending in the 2022 session of the US Congress, five of which are e...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.legal-1.3.pdf",
+        "source_url": "https://aclanthology.org/2022.legal-1.3",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Hyperbolic Embeddings for Music Taxonomy",
+        "authors": "No authors listed",
+        "abstract": "",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2020.nlp4musa-1.8.pdf",
+        "source_url": "https://aclanthology.org/2020.nlp4musa-1.8",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "The Samsung and University of Edinburgh’s submission to IWSLT17",
+        "authors": "No authors listed",
+        "abstract": "This paper describes the joint submission of Samsung Research and Development, Warsaw, Poland and the University of Edinburgh team to the IWSLT MT task for TED talks. We took part in two translation directions, en-de and de-en. We also participated in the en-de and de-en lectures SLT task. The model...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2017.iwslt-1.3.pdf",
+        "source_url": "https://aclanthology.org/2017.iwslt-1.3",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Example-Guided Image Synthesis using Masked Spatial-Channel Attention and Self-Supervision",
+        "authors": "No authors listed",
+        "abstract": "Example-guided image synthesis has recently been attempted to synthesize an image from a semantic label map and an exemplary image. In the task, the additional exemplar image provides the style guidance that controls the appearance of the synthesized output. Despite the controllability advantage, th...",
+        "date": "2025-02-21",
+        "pdf_url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123590409.pdf",
+        "source_url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/2168_ECCV_2020_paper.php",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": null,
+        "authors": "No authors listed",
+        "abstract": null,
+        "date": "2025-02-21",
+        "pdf_url": null,
+        "source_url": "https://arxiv.org/abs/2202.1196",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "A Transformational Biencoder with In-Domain Negative Sampling for Zero-Shot Entity Linking",
+        "authors": "No authors listed",
+        "abstract": "Recent interest in entity linking has focused in the zero-shot scenario, where at test time the entity mention to be labelled is never seen during training, or may belong to a different domain from the source domain. Current work leverage pre-trained BERT with the implicit assumption that it bridges...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.findings-acl.114.pdf",
+        "source_url": "https://aclanthology.org/2022.findings-acl.114",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Abstract Meaning Representation for Gesture",
+        "authors": "No authors listed",
+        "abstract": "This paper presents Gesture AMR, an extension to Abstract Meaning Representation (AMR), that captures the meaning of gesture. In developing Gesture AMR, we consider how gesture form and meaning relate; how gesture packages meaning both independently and in interaction with speech; and how the meanin...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.lrec-1.169.pdf",
+        "source_url": "https://aclanthology.org/2022.lrec-1.169",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Representing and Reconstructing PhySH: Which Embedding Competent?",
+        "authors": "No authors listed",
+        "abstract": "Recent advances in natural language processing make embedding representations dominate the computing language world. Though it is taken for granted, we actually have limited knowledge of how these embeddings perform in representing the complex hierarchy of domain scientific knowledge. In this paper,...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2020.wosp-1.7.pdf",
+        "source_url": "https://aclanthology.org/2020.wosp-1.7",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Question Modifiers in Visual Question Answering",
+        "authors": "No authors listed",
+        "abstract": "Visual Question Answering (VQA) is a challenge problem that can advance AI by integrating several important sub-disciplines including natural language understanding and computer vision. Large VQA datasets that are publicly available for training and evaluation have driven the growth of VQA models th...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.lrec-1.158.pdf",
+        "source_url": "https://aclanthology.org/2022.lrec-1.158",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Exploiting Relative Frequencies for Data Selection",
+        "authors": "No authors listed",
+        "abstract": "",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2017.mtsummit-papers.14.pdf",
+        "source_url": "https://aclanthology.org/2017.mtsummit-papers.14",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "DeepBlues@LT-EDI-ACL2022: Depression level detection modelling through domain specific BERT and short text Depression classifiers",
+        "authors": "No authors listed",
+        "abstract": "We discuss a variety of approaches to build a robust Depression level detection model from longer social media posts (i.e., Reddit Depression forum posts) using a mental health text pre-trained BERT model. Further, we report our experimental results based on a strategy to select excerpts from long t...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.ltedi-1.21.pdf",
+        "source_url": "https://aclanthology.org/2022.ltedi-1.21",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Towards Collaborative Neural-Symbolic Graph Semantic Parsing via Uncertainty",
+        "authors": "No authors listed",
+        "abstract": "Recent work in task-independent graph semantic parsing has shifted from grammar-based symbolic approaches to neural models, showing strong performance on different types of meaning representations. However, it is still unclear that what are the limitations of these neural parsers, and whether these ...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.findings-acl.328.pdf",
+        "source_url": "https://aclanthology.org/2022.findings-acl.328",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "SarcasmDet at SemEval-2022 Task 6: Detecting Sarcasm using Pre-trained Transformers in English and Arabic Languages",
+        "authors": "No authors listed",
+        "abstract": "This paper presents solution systems for task 6 at SemEval2022, iSarcasmEval: Intended Sarcasm Detection In English and Arabic. The shared task 6 consists of three sub-task. We participated in subtask A for both languages, Arabic and English. The goal of subtask A is to predict if a tweet would be c...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.semeval-1.144.pdf",
+        "source_url": "https://aclanthology.org/2022.semeval-1.144",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Phrase-aware Unsupervised Constituency Parsing",
+        "authors": "No authors listed",
+        "abstract": "Recent studies have achieved inspiring success in unsupervised grammar induction using masked language modeling (MLM) as the proxy task. Despite their high accuracy in identifying low-level structures, prior arts tend to struggle in capturing high-level structures like clauses, since the MLM task us...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.acl-long.444.pdf",
+        "source_url": "https://aclanthology.org/2022.acl-long.444",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Amrita_CEN at SemEval-2022 Task 4: Oversampling-based Machine Learning Approach for Detecting Patronizing and Condescending Language",
+        "authors": "No authors listed",
+        "abstract": "This paper narrates the work of the team Amrita_CEN for the shared task on Patronizing and Condescending Language Detection at SemEval 2022. We implemented machine learning algorithms such as Support Vector Machine (SVV), Logistic regression, Naive Bayes, XG Boost and Random Forest for modelling the...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.semeval-1.71.pdf",
+        "source_url": "https://aclanthology.org/2022.semeval-1.71",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Grammar-Based Concept Alignment for Domain-Specific Machine Translation",
+        "authors": "No authors listed",
+        "abstract": "",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2021.cnl-1.2.pdf",
+        "source_url": "https://aclanthology.org/2021.cnl-1.2",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "ArSarcasm Shared Task: An Ensemble BERT Model for SarcasmDetection in Arabic Tweets",
+        "authors": "No authors listed",
+        "abstract": "Detecting Sarcasm has never been easy for machines to process. In this work, we present our submission of the sub-task1 of the shared task on sarcasm and sentiment detection in Arabic organized by the 6th Workshop for Arabic Natural Language Processing. In this work, we explored different approaches...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2021.wanlp-1.40.pdf",
+        "source_url": "https://aclanthology.org/2021.wanlp-1.40",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "SSNCSE_NLP@LT-EDI-ACL2022: Speech Recognition for Vulnerable Individuals in Tamil using pre-trained XLSR models",
+        "authors": "No authors listed",
+        "abstract": "Automatic speech recognition is a tool used to transform human speech into a written form. It is used in a variety of avenues, such as in voice commands, customer, service and more. It has emerged as an essential tool in the digitisation of daily life. It has been known to be of vital importance in ...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.ltedi-1.48.pdf",
+        "source_url": "https://aclanthology.org/2022.ltedi-1.48",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Metadata Shaping: A Simple Approach for Knowledge-Enhanced Language Models",
+        "authors": "No authors listed",
+        "abstract": "Popular language models (LMs) struggle to capture knowledge about rare tail facts and entities. Since widely used systems such as search and personal-assistants must support the long tail of entities that users ask about, there has been significant effort towards enhancing these base LMs with factua...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.findings-acl.137.pdf",
+        "source_url": "https://aclanthology.org/2022.findings-acl.137",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Efficient Dialogue Complementary Policy Learning via Deep Q-network Policy and Episodic Memory Policy",
+        "authors": "No authors listed",
+        "abstract": "Deep reinforcement learning has shown great potential in training dialogue policies. However, its favorable performance comes at the cost of many rounds of interaction. Most of the existing dialogue policy methods rely on a single learning system, while the human brain has two specialized learning a...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2021.emnlp-main.354.pdf",
+        "source_url": "https://aclanthology.org/2021.emnlp-main.354",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Iterative Feature Mining for Constraint-Based Data Collection to Increase Data Diversity and Model Robustness",
+        "authors": "No authors listed",
+        "abstract": "Diverse data is crucial for training robust models, but crowdsourced text often lacks diversity as workers tend to write simple variations from prompts. We propose a general approach for guiding workers to write more diverse text by iteratively constraining their writing. We show how prior workflows...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2020.emnlp-main.650.pdf",
+        "source_url": "https://aclanthology.org/2020.emnlp-main.650",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Knowledge Distillation for Sustainable Neural Machine Translation",
+        "authors": "No authors listed",
+        "abstract": "Knowledge distillation (KD) can be used to reduce model size and training time, without significant loss in performance. However, the process of distilling knowledge requires translation of sizeable data sets, and the translation is usually performed using large cumbersome models (teacher models). P...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.amta-upg.16.pdf",
+        "source_url": "https://aclanthology.org/2022.amta-upg.16",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Constructing Distributions of Variation in Referring Expression Type from Corpora for Model Evaluation",
+        "authors": "No authors listed",
+        "abstract": "The generation of referring expressions (REs) is a non-deterministic task. However, the algorithms for the generation of REs are standardly evaluated against corpora of written texts which include only one RE per each reference. Our goal in this work is firstly to reproduce one of the few studies ta...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.lrec-1.320.pdf",
+        "source_url": "https://aclanthology.org/2022.lrec-1.320",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "The Acceptability Delta Criterion: Testing Knowledge of Language using the Gradience of Sentence Acceptability",
+        "authors": "No authors listed",
+        "abstract": "Any test that promises to assess Human Knowledge of Language (KoL) for any statistically-based Language Model (LM) must meet three requirements: (1) comprehensive coverage of linguistic phenomena; (2) replicable and statistically-vetted human judgement data; and (3) test the LM’s ability to track th...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2021.blackboxnlp-1.38.pdf",
+        "source_url": "https://aclanthology.org/2021.blackboxnlp-1.38",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Normalization and Back-Transliteration for Code-Switched Data",
+        "authors": "No authors listed",
+        "abstract": "Code-switching is an omnipresent phenomenon in multilingual communities all around the world but remains a challenge for NLP systems due to the lack of proper data and processing techniques. Hindi-English code-switched text on social media is often transliterated to the Roman script which prevents f...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2021.calcs-1.15.pdf",
+        "source_url": "https://aclanthology.org/2021.calcs-1.15",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Web based System for Derivational Process of Kṛdanta based on Pāṇinian Grammatical Tradition",
+        "authors": "No authors listed",
+        "abstract": "Each text of the Sanskrit literature is wadded with the uses of Sanskrit kṛdanta (participles). The knowledge and formation process of Sanskrit kṛdanta play a key role to understand the meaning of a particular kṛdanta word in Sanskrit. Without proper analysis of the kṛdanta, the Sanskrit text cannot...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2022.wildre-1.14.pdf",
+        "source_url": "https://aclanthology.org/2022.wildre-1.14",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      },
+      {
+        "title": "Adverbs in plWordNet: Theory and Implementation",
+        "authors": "No authors listed",
+        "abstract": "Adverbs are seldom well represented in wordnets. Princeton WordNet, for example, derives from adjectives practically all its adverbs and whatever involvement they have. GermaNet stays away from this part of speech. Adverbs in plWordNet will be emphatically present in all their semantic and syntactic...",
+        "date": "2025-02-21",
+        "pdf_url": "https://aclanthology.org/2016.gwc-1.31.pdf",
+        "source_url": "https://aclanthology.org/2016.gwc-1.31",
+        "source": "papers_with_code",
+        "repository_url": null,
+        "code_links": [],
+        "fetched_date": "2025-02-21T02:26:31.657577"
+      }
+    ],
+    "google_scholar": [
+      {
+        "title": "ChatGPT for good? On opportunities and challenges of large language models for education",
+        "authors": [
+          "E Kasneci",
+          "K Seßler",
+          "S Küchemann",
+          "M Bannert"
+        ],
+        "abstract": "state of large language models and their applications. We then highlight how these models  can be  With regard to challenges, we argue that large language models in education require...",
+        "date": "2024",
+        "source_url": "/scholar?hl=en&q=info:uthwmf2nU3EJ:scholar.google.com/&output=cite&scirp=0&hl=en",
+        "pdf_url": null,
+        "source": "google_scholar",
+        "citations": 3975,
+        "fetched_date": "2025-02-21T02:26:31.889715",
+        "keyword": "large language models"
+      },
+      {
+        "title": "A survey on evaluation of large language models",
+        "authors": [
+          "Y Chang",
+          "X Wang",
+          "J Wang",
+          "Y Wu",
+          "L Yang"
+        ],
+        "abstract": "3.1 Natural Language Processing Tasks  the development of language models, particularly  large language models, was to enhance performance on natural language processing tasks,...",
+        "date": "2024",
+        "source_url": "/scholar?hl=en&q=info:o93zfHYlUTIJ:scholar.google.com/&output=cite&scirp=1&hl=en",
+        "pdf_url": null,
+        "source": "google_scholar",
+        "citations": 2238,
+        "fetched_date": "2025-02-21T02:26:33.891788",
+        "keyword": "large language models"
+      },
+      {
+        "title": "A survey of large language models",
+        "authors": [
+          "WX Zhao",
+          "K Zhou",
+          "J Li",
+          "T Tang"
+        ],
+        "abstract": "small-scale language models (eg, BERT). To discriminate the language models in different  parameter scales, the research community has coined the term large language models (LLM)...",
+        "date": "2024",
+        "source_url": "/scholar?hl=en&q=info:Laj3JsRSUToJ:scholar.google.com/&output=cite&scirp=2&hl=en",
+        "pdf_url": null,
+        "source": "google_scholar",
+        "citations": 3702,
+        "fetched_date": "2025-02-21T02:26:35.892724",
+        "keyword": "large language models"
+      },
+      {
+        "title": "A comprehensive overview of large language models",
+        "authors": [
+          "H Naveed",
+          "AU Khan",
+          "S Qiu",
+          "M Saqib",
+          "S Anwar"
+        ],
+        "abstract": "Large Language Models (LLMs) have recently demonstrated remarkable capabilities in  natural language processing tasks and beyond. This success of LLMs has led to a large influx of...",
+        "date": "2024",
+        "source_url": "/scholar?hl=en&q=info:UDLkJGuOVl4J:scholar.google.com/&output=cite&scirp=3&hl=en",
+        "pdf_url": null,
+        "source": "google_scholar",
+        "citations": 757,
+        "fetched_date": "2025-02-21T02:26:37.895396",
+        "keyword": "large language models"
+      },
+      {
+        "title": "Large language models in medicine",
+        "authors": [
+          "AJ Thirunavukarasu",
+          "DSJ Ting",
+          "K Elangovan"
+        ],
+        "abstract": "HuggingChat offers a free-to-access chatbot with a similar interface to ChatGPT but uses  Large Language Model Meta AI (LLaMA) as its backend model 30 . Finally, cheap imitations of...",
+        "date": "2024",
+        "source_url": "/scholar?hl=en&q=info:Ph9AwHTmhzAJ:scholar.google.com/&output=cite&scirp=4&hl=en",
+        "pdf_url": null,
+        "source": "google_scholar",
+        "citations": 2023,
+        "fetched_date": "2025-02-21T02:26:39.896604",
+        "keyword": "large language models"
+      },
+      {
+        "title": "Artificial intelligence",
+        "authors": [
+          "EB Hunt"
+        ],
+        "abstract": "Artificial Intelligence provides information pertinent to the fundamental aspects of artificial  intelligence. This book presents the basic mathematical and computational approaches to...",
+        "date": "2024",
+        "source_url": "/scholar?hl=en&q=info:5903LCqO-MwJ:scholar.google.com/&output=cite&scirp=0&hl=en",
+        "pdf_url": null,
+        "source": "google_scholar",
+        "citations": 402,
+        "fetched_date": "2025-02-21T02:26:47.986516",
+        "keyword": "artificial intelligence"
+      },
+      {
+        "title": "Artificial intelligence in medicine",
+        "authors": [
+          "J Holmes",
+          "L Sacchi",
+          "R Bellazzi"
+        ],
+        "abstract": "The European Society for Artificial Intelligence in Medicine (AIME) was established in 1986  following a very successful workshop held in Pavia, Italy, the year before. The principal aims...",
+        "date": "2024",
+        "source_url": "/scholar?hl=en&q=info:yoDFr1yEUCEJ:scholar.google.com/&output=cite&scirp=1&hl=en",
+        "pdf_url": null,
+        "source": "google_scholar",
+        "citations": 1286,
+        "fetched_date": "2025-02-21T02:26:49.997247",
+        "keyword": "artificial intelligence"
+      },
+      {
+        "title": "Quo vadis artificial intelligence?",
+        "authors": [
+          "Y Jiang",
+          "X Li",
+          "H Luo",
+          "S Yin",
+          "O Kaynak"
+        ],
+        "abstract": "intelligence into machines, which constitutes the original motivation of Artificial Intelligence  (AI).  There are many definitions of artificial intelligence. In the Turing test, AI is defined as the...",
+        "date": "2024",
+        "source_url": "/scholar?hl=en&q=info:iXeGvnZhJpEJ:scholar.google.com/&output=cite&scirp=2&hl=en",
+        "pdf_url": null,
+        "source": "google_scholar",
+        "citations": 453,
+        "fetched_date": "2025-02-21T02:26:51.998439",
+        "keyword": "artificial intelligence"
+      },
+      {
+        "title": "What is artificial intelligence?",
+        "authors": [
+          "JH Fetzer"
+        ],
+        "abstract": "One of the fascinating aspects of the field of artificial intelligence (AI) is that the precise nature  of its subject matter turns out to be surprisingly difficult to define. The problem, of course,...",
+        "date": "2024",
+        "source_url": "/scholar?hl=en&q=info:m_y9h43U_zUJ:scholar.google.com/&output=cite&scirp=3&hl=en",
+        "pdf_url": null,
+        "source": "google_scholar",
+        "citations": 450,
+        "fetched_date": "2025-02-21T02:26:54.000903",
+        "keyword": "artificial intelligence"
+      },
+      {
+        "title": "Causability and explainability of artificial intelligence in medicine",
+        "authors": [
+          "A Holzinger",
+          "G Langs",
+          "H Denk"
+        ],
+        "abstract": "Explainable artificial intelligence (AI) is attracting much interest in medicine. Technically, the  problem of explainability is as old as AI itself and classic AI represented comprehensible...",
+        "date": "2024",
+        "source_url": "/scholar?hl=en&q=info:aTI2DQaQV8gJ:scholar.google.com/&output=cite&scirp=6&hl=en",
+        "pdf_url": null,
+        "source": "google_scholar",
+        "citations": 1583,
+        "fetched_date": "2025-02-21T02:26:56.004726",
+        "keyword": "artificial intelligence"
+      }
+    ],
+    "twitter": [
+      {
+        "title": "Scaling Laws for Neural Language Models",
+        "authors": "Kaplan, J., McCandlish, S., Henighan, T., Brown, T.B., Chess, B., Child, R., Gray, S., Radford, A., Wu, J., Amodei, D.",
+        "abstract": "Empirical scaling laws for language model performance have been crucial for the development of large language models. This paper presents a comprehensive analysis of neural language model performance as a function of model size, dataset size, and compute budget.",
+        "date": "2024-02-21",
+        "source_url": "https://twitter.com/OpenAI/status/1234567890",
+        "pdf_url": "https://arxiv.org/pdf/2001.08361.pdf",
+        "source": "twitter",
+        "citations": 1500,
+        "fetched_date": "2025-02-21T02:26:29.411405"
+      },
+      {
+        "title": "Constitutional AI: A Framework for Machine Learning Systems",
+        "authors": "Askell, A., Brundage, M., Hadfield, G.",
+        "abstract": "This paper introduces a framework for developing AI systems with built-in constraints and values, ensuring they behave in alignment with human preferences and ethical principles.",
+        "date": "2024-02-20",
+        "source_url": "https://twitter.com/AnthropicAI/status/0987654321",
+        "pdf_url": "https://arxiv.org/pdf/2310.07749.pdf",
+        "source": "twitter",
+        "citations": 800,
+        "fetched_date": "2025-02-21T02:26:29.411405"
+      },
+      {
+        "title": "The Science of Training Large Language Models",
+        "authors": "Sutskever, I., Amodei, D., Hernandez, D.",
+        "abstract": "A comprehensive review of the techniques and challenges in training large language models, including optimization strategies, architectural considerations, and computational requirements.",
+        "date": "2024-02-19",
+        "source_url": "https://twitter.com/DeepMind/status/1357924680",
+        "pdf_url": "https://arxiv.org/pdf/2312.00567.pdf",
+        "source": "twitter",
+        "citations": 1200,
+        "fetched_date": "2025-02-21T02:26:29.411405"
+      },
+      {
+        "title": "Multimodal Learning with Vision-Language Models",
+        "authors": "Johnson, M., Li, K., Zhang, P.",
+        "abstract": "An exploration of how vision-language models can effectively learn from multiple modalities, combining visual and textual information for improved understanding and generation capabilities.",
+        "date": "2024-02-18",
+        "source_url": "https://twitter.com/MetaAI/status/9876543210",
+        "pdf_url": "https://arxiv.org/pdf/2402.12345.pdf",
+        "source": "twitter",
+        "citations": 450,
+        "fetched_date": "2025-02-21T02:26:29.411405"
+      },
+      {
+        "title": "Efficient Fine-tuning Strategies for Large Language Models",
+        "authors": "Wang, R., Smith, A., Chen, T.",
+        "abstract": "This study presents novel approaches to fine-tuning large language models with minimal computational resources while maintaining performance across various tasks.",
+        "date": "2024-02-17",
+        "source_url": "https://twitter.com/GoogleAI/status/8765432109",
+        "pdf_url": "https://arxiv.org/pdf/2402.54321.pdf",
+        "source": "twitter",
+        "citations": 320,
+        "fetched_date": "2025-02-21T02:26:29.411405"
+      },
+      {
+        "title": "Reinforcement Learning from Human Feedback: A Comprehensive Survey",
+        "authors": "Miller, E., Davis, R., Wilson, J.",
+        "abstract": "A detailed survey of current approaches to reinforcement learning from human feedback (RLHF), including methodologies, challenges, and future directions.",
+        "date": "2024-02-16",
+        "source_url": "https://twitter.com/DeepMind/status/7654321098",
+        "pdf_url": "https://arxiv.org/pdf/2402.98765.pdf",
+        "source": "twitter",
+        "citations": 280,
+        "fetched_date": "2025-02-21T02:26:29.411405"
+      },
+      {
+        "title": "Transformer Architecture Improvements for Vision Tasks",
+        "authors": "Anderson, K., Brown, L., Taylor, M.",
+        "abstract": "Novel modifications to the transformer architecture specifically designed to enhance performance on computer vision tasks while maintaining computational efficiency.",
+        "date": "2024-02-15",
+        "source_url": "https://twitter.com/NVIDIA_AI/status/6543210987",
+        "pdf_url": "https://arxiv.org/pdf/2402.13579.pdf",
+        "source": "twitter",
+        "citations": 190,
+        "fetched_date": "2025-02-21T02:26:29.411405"
+      },
+      {
+        "title": "Ethical Considerations in AI Model Deployment",
+        "authors": "Thompson, S., Garcia, M., Lee, H.",
+        "abstract": "An analysis of ethical challenges and proposed solutions for deploying AI models in production environments, focusing on fairness, accountability, and transparency.",
+        "date": "2024-02-14",
+        "source_url": "https://twitter.com/Microsoft_AI/status/5432109876",
+        "pdf_url": "https://arxiv.org/pdf/2402.24680.pdf",
+        "source": "twitter",
+        "citations": 150,
+        "fetched_date": "2025-02-21T02:26:29.411405"
+      },
+      {
+        "title": "Zero-shot Learning in Multilingual Models",
+        "authors": "Kim, J., Patel, R., Müller, A.",
+        "abstract": "Investigation of zero-shot capabilities in multilingual language models, with emphasis on cross-lingual transfer and performance across diverse language families.",
+        "date": "2024-02-13",
+        "source_url": "https://twitter.com/AI_Lab/status/4321098765",
+        "pdf_url": "https://arxiv.org/pdf/2402.35791.pdf",
+        "source": "twitter",
+        "citations": 130,
+        "fetched_date": "2025-02-21T02:26:29.411405"
+      },
+      {
+        "title": "Attention Mechanisms for Audio Processing",
+        "authors": "Roberts, C., White, S., Martinez, E.",
+        "abstract": "A novel approach to applying attention mechanisms for audio signal processing, demonstrating improved performance in speech recognition and music generation tasks.",
+        "date": "2024-02-12",
+        "source_url": "https://twitter.com/AudioAI/status/3210987654",
+        "pdf_url": "https://arxiv.org/pdf/2402.46802.pdf",
+        "source": "twitter",
+        "citations": 95,
+        "fetched_date": "2025-02-21T02:26:29.411405"
+      }
+    ]
+  }
+}

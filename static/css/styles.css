@@ -53,6 +53,7 @@ body {
     justify-content: center;
     min-height: min-content;
     height: auto;
+    flex: 0 0 auto;
 }
 .daily-message {
     text-align: center;
@@ -73,16 +74,88 @@ body {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     padding: 15px;
+    flex: 0 0 auto;
 }
-.papers{
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+.papers {
+    flex: 1;
+    height: 600px;  /* Altura fija */
+    overflow: hidden;
+}
+
+.papers-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
     padding: 15px;
+}
+
+.papers-section-title {
+    color: #3498db;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.papers-list {
+    list-style: none;
+    padding: 0;
+}
+.paper-item {
+    background: rgba(255, 255, 255, 0.08);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.paper-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateX(5px);
+}
+.paper-title {
+    font-size: 1.1em;
+    color: #3498db;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.paper-authors {
+    font-size: 0.9em;
+    color: #bbb;
+    margin-bottom: 5px;
+}
+.paper-abstract {
+    font-size: 0.9em;
+    color: #ddd;
+    margin-bottom: 10px;
+}
+.paper-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    color: #888;
+}
+.paper-date {
+    color: #3498db;
+}
+.paper-links {
+    display: flex;
+    gap: 10px;
+}
+.paper-link {
+    color: #3498db;
+    text-decoration: none;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(52, 152, 219, 0.1);
+}
+.paper-link:hover {
+    background: rgba(52, 152, 219, 0.2);
 }
 .cuestionario{
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     padding: 15px;
+    flex: 0 0 auto;
 }
 
 .right_container {
@@ -120,6 +193,7 @@ iframe, embed {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     padding: 15px;
+    flex: 0 0 auto;
 }
 .receta{
     background-color: rgba(255, 255, 255, 0.05);
@@ -153,27 +227,16 @@ iframe, embed {
     position: relative;
     overflow: auto;
     min-height: 100px;
-    flex: 1;
 }
 
-.expanded {
-    flex: 1 !important;
+/* Cuando un elemento está expandido */
+.left_container > div.expanded,
+.right_container > div.expanded {
+    flex: 1 1 auto !important;
     min-height: 0;
     height: auto !important;
     overflow: auto !important;
     width: 100% !important;
-}
-
-.left_container.expanded,
-.right_container.expanded {
-    flex: 4 !important;
-    width: 80% !important;
-}
-
-.left_container:not(.expanded),
-.right_container:not(.expanded) {
-    flex: 0.8;
-    width: 20% !important;
 }
 
 .preview-title {
@@ -437,4 +500,183 @@ iframe, embed {
 .weather-daily,
 .weather-hourly {
     display: none;
+}
+
+.papers-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    height: 100%;  /* Ocupa todo el alto del contenedor padre */
+    overflow: hidden;
+}
+
+.paper-section {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 1rem;
+    height: 350px;  /* Altura fija para cada sección */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.paper-section h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.paper-list {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    margin-right: -0.5rem;
+    height: calc(100% - 3rem);  /* Altura total menos el espacio del título */
+}
+
+.paper-list > * {
+    margin-bottom: 1rem;  /* Espacio entre elementos de la lista */
+}
+
+.paper-list > *:last-child {
+    margin-bottom: 0;  /* Eliminar margen del último elemento */
+}
+
+.paper-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.paper-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.paper-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.paper-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.paper-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.paper-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(5px);
+}
+
+.paper-item h4 {
+    margin: 0 0 0.5rem 0;
+    color: #3498db;
+}
+
+.paper-item h4 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.paper-item h4 a:hover {
+    text-decoration: underline;
+}
+
+.paper-authors {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0.25rem 0;
+}
+
+.paper-abstract {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.paper-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.paper-date {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.paper-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.paper-pdf, .paper-code {
+    background: rgba(52, 152, 219, 0.2);
+    color: #3498db;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.paper-pdf:hover, .paper-code:hover {
+    background: rgba(52, 152, 219, 0.3);
+}
+
+.coming-soon {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    padding: 2rem;
+}
+
+.paper-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.paper-citations {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.paper-citations::before {
+    content: "•";
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.loading-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.paper-section.loading .paper-list {
+    opacity: 0.7;
+    pointer-events: none;
+    height: 100%;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
