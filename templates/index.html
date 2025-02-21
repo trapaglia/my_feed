@@ -47,11 +47,25 @@
             </div>
             <div class="idioma1">
                 <div class="preview-title">🇯🇵 Japonés del día</div>
-                <iframe src="https://nihongodera.com/daily_words"></iframe>
+                <div class="skeleton" id="japanese-skeleton">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Cargando contenido japonés...</div>
+                </div>
+                <iframe src="https://nihongodera.com/daily_words" style="display: none;"></iframe>
             </div>
             <div class="pagina_libro">
                 <div class="preview-title">📚 Lectura actual</div>
-                <embed src="{{ url_for('static', filename='/data/Pensar Rapido, Pensar Despacio.pdf') }}" type="application/pdf" width="100%" height="100%">
+                <div class="skeleton" id="pdf-skeleton">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Cargando PDF...</div>
+                </div>
+                <embed 
+                    src="{{ url_for('static', filename='/data/Pensar Rapido, Pensar Despacio.pdf') }}#view=FitH" 
+                    type="application/pdf" 
+                    width="100%" 
+                    height="100%"
+                    style="display: none;"
+                >
             </div>
             <div class="receta">
                 <div class="preview-title">🍳 Receta del día</div>

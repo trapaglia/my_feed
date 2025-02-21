@@ -43,4 +43,57 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.left_container').classList.remove('expanded');
         document.querySelector('.right_container').classList.remove('expanded');
     }
+
+    // Función modificada para manejar la carga de iframes
+    function handleContentLoad(contentElement, skeletonId) {
+        if (contentElement.tagName.toLowerCase() === 'embed') {
+            // Para PDFs, usar un timeout corto para simular la carga
+            setTimeout(() => {
+                const skeleton = document.getElementById(skeletonId);
+                if (skeleton) {
+                    skeleton.style.display = 'none';
+                    contentElement.style.display = 'block';
+                }
+            }, 1000);
+        } else {
+            contentElement.addEventListener('load', function() {
+                const skeleton = document.getElementById(skeletonId);
+                if (skeleton) {
+                    skeleton.style.display = 'none';
+                    contentElement.style.display = 'block';
+                }
+            });
+        }
+    }
+
+    // Manejar la carga de cada elemento
+    const pdfEmbed = document.querySelector('.pagina_libro embed');
+    const japaneseIframe = document.querySelector('.idioma1 iframe');
+    const chineseIframe = document.querySelector('.idioma2 iframe');
+    const calendarIframe = document.querySelector('#calendar iframe');
+
+    handleContentLoad(pdfEmbed, 'pdf-skeleton');
+    handleContentLoad(japaneseIframe, 'japanese-skeleton');
+    handleContentLoad(chineseIframe, 'chinese-skeleton');
+    handleContentLoad(calendarIframe, 'calendar-skeleton');
+
+    // Función modificada para manejar errores
+    function handleLoadError(element, skeletonId) {
+        element.addEventListener('error', function() {
+            const skeleton = document.getElementById(skeletonId);
+            if (skeleton) {
+                skeleton.innerHTML = `
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-circle"></i>
+                        Error al cargar el contenido
+                    </div>
+                `;
+            }
+        });
+    }
+
+    // Aplicar manejo de errores a todos los elementos
+    [pdfEmbed, japaneseIframe, chineseIframe, calendarIframe].forEach((element, index) => {
+        handleLoadError(element, ['pdf-skeleton', 'japanese-skeleton', 'chinese-skeleton', 'calendar-skeleton'][index]);
+    });
 }); 

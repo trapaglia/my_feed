@@ -220,17 +220,87 @@ iframe, embed {
     height: 90vh !important;
 }
 
-.expanded iframe,
-.expanded embed {
-    width: 100%;
-    height: 90vh !important;
-    min-height: 90vh !important;
-}
-
-.expanded .preview-title {
-    display: none;
-}
-
+/* Reglas específicas para el contenedor del PDF */
 .pagina_libro.expanded {
-    height: 90vh !important;
+    display: flex;
+    flex-direction: column;
+    height: 95vh !important;
+    padding: 0 !important;
+    overflow: auto !important;
+}
+
+/* Reglas específicas para el embed del PDF */
+.pagina_libro.expanded embed {
+    flex: 1;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: unset !important;
+    max-height: none !important;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Agregar animación de skeleton */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.skeleton {
+    animation: fade 0.5s ease-in;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.05) 25%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        rgba(255, 255, 255, 0.05) 75%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+    min-height: 200px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Agregar un spinner de carga */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+.loading-text {
+    font-size: 1.2em;
+    color: #3498db;
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+    margin-top: 10px;
+}
+
+/* Estilo para mensajes de error */
+.error-message {
+    color: #e74c3c;
+    text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+    border: 2px solid rgba(231, 76, 60, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgba(231, 76, 60, 0.1);
 }
