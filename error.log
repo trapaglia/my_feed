@@ -1,0 +1,6 @@
+[Tue Feb 18 00:48:54.380618 2025] [authz_core:error] [pid 9056:tid 9117] [client 181.116.60.37:32150] AH01630: client denied by server configuration: /home/matiasdanmansilla/projects/my_feed/mi_flask.wsgi
+[Tue Feb 18 00:51:00.933228 2025] [authz_core:error] [pid 9056:tid 9114] [client 181.116.60.37:34596] AH01630: client denied by server configuration: /home/matiasdanmansilla/projects/my_feed/mi_flask.wsgi
+[Tue Feb 18 00:54:09.684723 2025] [authz_core:error] [pid 9057:tid 9123] [client 181.116.60.37:37028] AH01630: client denied by server configuration: /home/matiasdanmansilla/projects/my_feed/mi_flask.wsgi
+[Wed Feb 19 20:46:21.832062 2025] [authz_core:error] [pid 26337:tid 26384] [client 104.156.155.35:50412] AH01630: client denied by server configuration: /home/matiasdanmansilla/projects/my_feed/mi_flask.wsgi
+[Thu Feb 20 23:20:50.028201 2025] [core:error] [pid 41796:tid 41855] [client 106.12.144.156:44958] AH10244: invalid URI path (/cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/bin/sh)
+[Thu Feb 20 23:20:50.466116 2025] [core:error] [pid 41796:tid 41852] [client 106.12.144.156:60396] AH10244: invalid URI path (/cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh)
