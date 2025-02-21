@@ -5,20 +5,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1>Hello!</h1>
-
-    <!-- <ul>
-        {% for item in posts %}
-            <li>{{ item }}</li>
-        {% endfor %}
-    </ul> -->
     <div class="top_container">
         <div class="left_container">
             <div class="phrase">
                 {{ frase }}
             </div>
-            <div class="papers">1.3</div>
-            <div class="cuestionario">1.4</div>
+            <div class="papers">1.4</div>
+            <div class="cuestionario">1.5</div>
+            <div class="idioma2">
+                <!-- <iframe src="https://www.transparent.com/word-of-the-day/today/chinese"></iframe> -->
+                <div id="widget" style="width:540px;height:450px;margin:0 auto;"><iframe src="https://www.innovativelanguage.com/widgets/wotd/embed.php?language=Chinese&type=large&bg=url%28/widgets/wotd/skin/images/large/Mountains.png%29%20no-repeat%200%200&content=%23000&header=%2388A1B6&highlight=%2388A1B6&opacity=.25&scrollbg=%23323E47&sound=%239A958C&text=%23353B1A&quiz=N" width="540" height="450" frameborder="0" scrolling="no"></iframe><div style="font:bold 9px/16px Verdana; padding:0; height:16px;"><div style="float:left; margin:0;"><a href="https://www.chineseclass101.com/chinese-phrases/" target="_parent" title="Get Chinese Phrases Widget" style="font-family: Helvetica, Arial, sans-serif;font-size: 11px;color: #00ACED;" rel="nofollow">Get Chinese Phrases Widget</a></div><div style="float:right; margin:0;"><a href="https://www.chineseclass101.com" target="_parent" title="Learn Chinese" style="font-family: Helvetica, Arial, sans-serif;font-size: 11px;color: #00ACED;" rel="nofollow">Learn Chinese</a></div></div></div>
+            </div>
             <div id="calendar">
                 <iframe src="https://calendar.google.com/calendar/embed?src=matiasdanmansilla%40gmail.com&ctz=America%2FArgentina%2FBuenos_Aires" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
             </div>
@@ -33,13 +30,11 @@
                 <!-- https://weatherwidget.org/ -->
                 <div id="ww_dc14686a0c1f8" v='1.3' loc='id' a='{"t":"horizontal","lang":"es","sl_lpl":1,"ids":["wl3317"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_nme":3,"el_cwt":3}'>Más previsiones: <a href="https://oneweather.org/buenos_aires/30_days/" id="ww_dc14686a0c1f8_u" target="_blank">Buenos Aires weather 30 days</a></div><script async src="https://app3.weatherwidget.org/js/?id=ww_dc14686a0c1f8"></script>
             </div>
-            <div class="pagina_libro">2.2</div>
             <div class="idioma1">
                 <iframe src="https://nihongodera.com/daily_words"></iframe>
             </div>
-            <div class="idioma2">
-                <!-- <iframe src="https://www.transparent.com/word-of-the-day/today/chinese"></iframe> -->
-                <div id="widget" style="width:540px;height:450px;margin:0 auto;"><iframe src="https://www.innovativelanguage.com/widgets/wotd/embed.php?language=Chinese&type=large&bg=url%28/widgets/wotd/skin/images/large/Mountains.png%29%20no-repeat%200%200&content=%23000&header=%2388A1B6&highlight=%2388A1B6&opacity=.25&scrollbg=%23323E47&sound=%239A958C&text=%23353B1A&quiz=N" width="540" height="450" frameborder="0" scrolling="no"></iframe><div style="font:bold 9px/16px Verdana; padding:0; height:16px;"><div style="float:left; margin:0;"><a href="https://www.chineseclass101.com/chinese-phrases/" target="_parent" title="Get Chinese Phrases Widget" style="font-family: Helvetica, Arial, sans-serif;font-size: 11px;color: #00ACED;" rel="nofollow">Get Chinese Phrases Widget</a></div><div style="float:right; margin:0;"><a href="https://www.chineseclass101.com" target="_parent" title="Learn Chinese" style="font-family: Helvetica, Arial, sans-serif;font-size: 11px;color: #00ACED;" rel="nofollow">Learn Chinese</a></div></div></div>
+            <div class="pagina_libro">
+                <embed src="{{ url_for('static', filename='/data/Pensar Rapido, Pensar Despacio.pdf') }}" type="application/pdf" width="100%" height="100%">
             </div>
             <div class="receta">2.5</div>
         </div>
