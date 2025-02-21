@@ -4,84 +4,118 @@
     box-sizing: border-box;
 }
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Arial', sans-serif;
     background-color: #171038;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 .top_container {
     display: flex;
     flex-direction: row;
-    /* height: 100vh; */
-    margin: 0;
-    padding: 0;
-    /* padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    */
-    border: 1px solid black;
+    gap: 20px;
+    padding: 20px;
 }
 
 .left_container {
     flex-grow: 1;
-    border: 1px solid black; 
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 20px;
 }
 .phrase{
-    align-items: center;
-    justify-content: center;
-    font-family: "Lucida Console";
-    min-height: 50px;
-    flex: 1;
-    display: flex;
-    font-size: 26px; /* Change the text size here */
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+}
+.daily-message {
+    text-align: center;
+    font-size: 24px;
     color: beige;
     text-shadow: 2px 2px rgba(109, 109, 187, 0.623);
+    font-family: "Lucida Console";
+}
+.daily-message small {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #3498db;
 }
 #calendar{
-    min-height: 140px;
-    flex: 2;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
 }
 .papers{
-    min-height: 50px;
-    flex: 3;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
 }
 .cuestionario{
-    min-height: 50px;
-    flex: 1;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
 }
 
 .right_container {
     flex-grow: 3;
     min-width: 300px;
-    height: 1500px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 .clima{
-    min-height: 100px;
-    flex-grow: 1;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
 }
 .pagina_libro{
-    min-height: 700px;
-    flex-grow: 3;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
 }
-iframe {
-    width: 100%;
-    height: 100%;
+iframe, embed {
+    border-radius: 8px;
+    background-color: white;
 }
 .idioma1{
-    min-height: 100px;
-    flex-grow: 3;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
 }
 .idioma2{
-    min-height: 100px;
-    flex-grow: 1;
-    border: 1px solid black; 
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
 }
 .receta{
-    min-height: 100px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #2c3e50;
+    font-size: 32px;
 }
