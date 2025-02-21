@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     expandableElements.forEach(element => {
         element.addEventListener('click', function(e) {
-            // Prevenir que el click se propague al contenedor padre
             e.stopPropagation();
             
             // Si el elemento ya está expandido, lo contraemos
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Contraer todos los elementos
+            // Contraer todos los elementos excepto el clickeado
             expandableElements.forEach(el => {
                 if (el !== this) {
                     el.classList.add('contracted');
@@ -25,23 +24,23 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('expanded');
             this.classList.remove('contracted');
             
-            // Expandir el contenedor padre
+            // Ajustar el tamaño del contenedor padre sin contraer el otro contenedor
             const parentContainer = this.closest('.left_container, .right_container');
+            parentContainer.classList.add('expanded');
+            
+            // Eliminar la clase expanded del otro contenedor si la tiene
             const otherContainer = parentContainer.classList.contains('left_container') 
                 ? document.querySelector('.right_container') 
                 : document.querySelector('.left_container');
-            
-            parentContainer.classList.add('expanded');
-            otherContainer.classList.add('contracted');
+            otherContainer.classList.remove('expanded');
         });
     });
     
-    // Función para resetear todos los elementos a su tamaño original
     function resetElements() {
         expandableElements.forEach(element => {
             element.classList.remove('expanded', 'contracted');
         });
-        document.querySelector('.left_container').classList.remove('expanded', 'contracted');
-        document.querySelector('.right_container').classList.remove('expanded', 'contracted');
+        document.querySelector('.left_container').classList.remove('expanded');
+        document.querySelector('.right_container').classList.remove('expanded');
     }
 }); 

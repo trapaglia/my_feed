@@ -10,24 +10,34 @@
     <div class="top_container">
         <div class="left_container">
             <div class="phrase">
+                <div class="preview-title">🌟 Frase del día</div>
                 <div class="daily-message">
                     <p>{{ frase.texto }}</p>
                     <small>{{ frase.categoria }}</small>
                 </div>
             </div>
-            <div class="papers">1.4</div>
-            <div class="cuestionario">1.5</div>
+            <div class="papers">
+                <div class="preview-title">📝 Papers pendientes</div>
+                <div class="papers">1.4</div>
+            </div>
+            <div class="cuestionario">
+                <div class="preview-title">❓ Cuestionario</div>
+                <div class="cuestionario">1.5</div>
+            </div>
             <div class="idioma2">
+                <div class="preview-title">🇨🇳 Chino del día</div>
                 <div id="widget" style="width:540px;height:450px;margin:0 auto;">
                     <iframe src="https://www.innovativelanguage.com/widgets/wotd/embed.php?language=Chinese&type=large" width="540" height="450" frameborder="0" scrolling="no"></iframe>
                 </div>
             </div>
             <div id="calendar">
+                <div class="preview-title">📅 Calendario</div>
                 <iframe src="https://calendar.google.com/calendar/embed?src=matiasdanmansilla%40gmail.com&ctz=America%2FArgentina%2FBuenos_Aires" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
             </div>
         </div>
         <div class="right_container">
             <div class="clima">
+                <div class="preview-title">🌤️ Clima</div>
                 <a class="weatherwidget-io" href="https://forecast7.com/es/n31d42n64d19/cordoba/" data-label_1="CÓRDOBA" data-label_2="Cordoba" data-theme="original" >CÓRDOBA Cordoba</a>
                 <script>
                 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
@@ -36,12 +46,17 @@
                 <script async src="https://app3.weatherwidget.org/js/?id=ww_dc14686a0c1f8"></script>
             </div>
             <div class="idioma1">
+                <div class="preview-title">🇯🇵 Japonés del día</div>
                 <iframe src="https://nihongodera.com/daily_words"></iframe>
             </div>
             <div class="pagina_libro">
+                <div class="preview-title">📚 Lectura actual</div>
                 <embed src="{{ url_for('static', filename='/data/Pensar Rapido, Pensar Despacio.pdf') }}" type="application/pdf" width="100%" height="100%">
             </div>
-            <div class="receta">2.5</div>
+            <div class="receta">
+                <div class="preview-title">🍳 Receta del día</div>
+                <div class="receta">2.5</div>
+            </div>
         </div>
     </div>
     
