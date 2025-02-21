@@ -1,0 +1,5 @@
+sudo systemctl status ssh
+sudo apt-get install openssh-server
+ssh-keygen -t rsa -f gcloud -C matiasdanmansilla -b 2048 (sin pharaphrase)
+https://www.youtube.com/watch?v=0Bjx3Ra8PRM
+sudo service apache2 restart
