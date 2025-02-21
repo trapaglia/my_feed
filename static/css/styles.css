@@ -20,8 +20,17 @@ body {
     padding: 20px;
 }
 
+.left_container,
+.right_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease;
+    height: 98vh;
+}
+
 .left_container {
-    flex-grow: 1;
+    flex: 1;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 20px;
@@ -29,7 +38,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    transition: flex-grow 0.3s ease;
+    transition: all 0.3s ease;
 }
 .phrase{
     background-color: rgba(255, 255, 255, 0.05);
@@ -66,12 +75,12 @@ body {
 }
 
 .right_container {
-    flex-grow: 3;
+    flex: 3;
     min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    transition: flex-grow 0.3s ease;
+    transition: all 0.3s ease;
 }
 .clima{
     background-color: rgba(255, 255, 255, 0.05);
@@ -130,22 +139,55 @@ iframe, embed {
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
     min-height: 100px;
+    flex: 1;
 }
 
 .expanded {
-    flex-grow: 5 !important;
-    min-height: 70vh !important;
-    z-index: 10;
+    flex: 15 !important;
+    min-height: 0;
+    height: auto !important;
+    overflow: auto !important;
+}
+
+.left_container.expanded {
+    flex: 8 !important;
+}
+
+.right_container.expanded {
+    flex: 8 !important;
 }
 
 .contracted {
-    flex-grow: 0.5 !important;
+    flex: 0.1 !important;
     min-height: 50px !important;
+    max-height: 50px !important;
     opacity: 0.7;
+    overflow: hidden !important;
 }
 
-.clima.expanded .weatherwidget-io {
-    height: 100% !important;
+.clima.expanded {
+    height: auto !important;
+    min-height: 400px !important;
+}
+
+#calendar.expanded {
+    height: 90vh !important;
+}
+
+.idioma1.expanded,
+.idioma2.expanded {
+    height: 90vh !important;
+}
+
+.expanded iframe,
+.expanded embed {
+    width: 100%;
+    height: 90vh !important;
+    min-height: 90vh !important;
+}
+
+.pagina_libro.expanded {
+    height: 90vh !important;
 }
