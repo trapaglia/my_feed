@@ -18,7 +18,42 @@
             </div>
             <div class="papers">
                 <div class="preview-title">📝 Papers pendientes</div>
-                <div class="papers">1.4</div>
+                <div class="papers-container">
+                    <div class="paper-section">
+                        <h3>arXiv Papers</h3>
+                        <div class="paper-list">
+                            {% for paper in arxiv_papers %}
+                            <div class="paper-item">
+                                <h4><a href="{{ paper.source_url }}" target="_blank">{{ paper.title }}</a></h4>
+                                <p class="paper-authors">{{ paper.authors }}</p>
+                                <p class="paper-abstract">{{ paper.abstract }}</p>
+                                <div class="paper-meta">
+                                    <span class="paper-date">{{ paper.date }}</span>
+                                    <a href="{{ paper.pdf_url }}" target="_blank" class="paper-pdf">PDF</a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="paper-section">
+                        <h3>Papers With Code</h3>
+                        <div class="paper-list">
+                            <p class="coming-soon">Próximamente</p>
+                        </div>
+                    </div>
+                    <div class="paper-section">
+                        <h3>Google Scholar</h3>
+                        <div class="paper-list">
+                            <p class="coming-soon">Próximamente</p>
+                        </div>
+                    </div>
+                    <div class="paper-section">
+                        <h3>Twitter/X Research</h3>
+                        <div class="paper-list">
+                            <p class="coming-soon">Próximamente</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="cuestionario">
                 <div class="preview-title">❓ Cuestionario</div>

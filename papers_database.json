@@ -1,0 +1,154 @@
+{
+  "last_update": "2025-02-21T01:42:09.245462",
+  "papers": {
+    "arxiv": [
+      {
+        "title": "LServe: Efficient Long-sequence LLM Serving with Unified Sparse Attention",
+        "authors": "Shang Yang, Junxian Guo, Haotian Tang, Qinghao Hu, Guangxuan Xiao, Jiaming Tang, Yujun Lin, Zhijian Liu, Yao Lu, Song Han",
+        "abstract": "Large language models (LLMs) have shown remarkable potential in processing\nlong sequences, yet efficiently serving these long-context models remains\nchallenging due to the quadratic computational complexity of attention in the\nprefilling stage and the large memory footprint of the KV cache in the de...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14866v1",
+        "source_url": "http://arxiv.org/abs/2502.14866v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.DC",
+          "cs.LG",
+          "cs.PF"
+        ],
+        "fetched_date": "2025-02-21T01:42:09.243480"
+      },
+      {
+        "title": "Interpretable Text Embeddings and Text Similarity Explanation: A Primer",
+        "authors": "Juri Opitz, Lucas Möller, Andrianos Michail, Simon Clematide",
+        "abstract": "Text embeddings and text embedding models are a backbone of many AI and NLP\nsystems, particularly those involving search. However, interpretability\nchallenges persist, especially in explaining obtained similarity scores, which\nis crucial for applications requiring transparency. In this paper, we giv...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14862v1",
+        "source_url": "http://arxiv.org/abs/2502.14862v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.IR"
+        ],
+        "fetched_date": "2025-02-21T01:42:09.243480"
+      },
+      {
+        "title": "Aligning LLMs to Ask Good Questions A Case Study in Clinical Reasoning",
+        "authors": "Shuyue Stella Li, Jimin Mun, Faeze Brahman, Jonathan S. Ilgen, Yulia Tsvetkov, Maarten Sap",
+        "abstract": "Large language models (LLMs) often fail to ask effective questions under\nuncertainty, making them unreliable in domains where proactive\ninformation-gathering is essential for decisionmaking. We present ALFA, a\nframework that improves LLM question-asking by (i) decomposing the notion of a\n\"good\" ques...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14860v1",
+        "source_url": "http://arxiv.org/abs/2502.14860v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL"
+        ],
+        "fetched_date": "2025-02-21T01:42:09.243480"
+      },
+      {
+        "title": "FR-Spec: Accelerating Large-Vocabulary Language Models via Frequency-Ranked Speculative Sampling",
+        "authors": "Weilin Zhao, Tengyu Pan, Xu Han, Yudi Zhang, Ao Sun, Yuxiang Huang, Kaihuo Zhang, Weilun Zhao, Yuxuan Li, Jianyong Wang, Zhiyuan Liu, Maosong Sun",
+        "abstract": "Speculative sampling has emerged as an important technique for accelerating\nthe auto-regressive generation process of large language models (LLMs) by\nutilizing a draft-then-verify mechanism to produce multiple tokens per forward\npass. While state-of-the-art speculative sampling methods use only a si...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14856v1",
+        "source_url": "http://arxiv.org/abs/2502.14856v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "fetched_date": "2025-02-21T01:42:09.243480"
+      },
+      {
+        "title": "Prompt-to-Leaderboard",
+        "authors": "Evan Frick, Connor Chen, Joseph Tennyson, Tianle Li, Wei-Lin Chiang, Anastasios N. Angelopoulos, Ion Stoica",
+        "abstract": "Large language model (LLM) evaluations typically rely on aggregated metrics\nlike accuracy or human preference, averaging across users and prompts. This\naveraging obscures user- and prompt-specific variations in model performance.\nTo address this, we propose Prompt-to-Leaderboard (P2L), a method that...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14855v1",
+        "source_url": "http://arxiv.org/abs/2502.14855v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.LG",
+          "cs.CL"
+        ],
+        "fetched_date": "2025-02-21T01:42:09.243480"
+      },
+      {
+        "title": "CLIPPER: Compression enables long-context synthetic data generation",
+        "authors": "Chau Minh Pham, Yapei Chang, Mohit Iyyer",
+        "abstract": "LLM developers are increasingly reliant on synthetic data, but generating\nhigh-quality data for complex long-context reasoning tasks remains challenging.\nWe introduce CLIPPER, a compression-based approach for generating synthetic\ndata tailored to narrative claim verification - a task that requires r...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14854v1",
+        "source_url": "http://arxiv.org/abs/2502.14854v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL"
+        ],
+        "fetched_date": "2025-02-21T01:42:09.243480"
+      },
+      {
+        "title": "GATE: Graph-based Adaptive Tool Evolution Across Diverse Tasks",
+        "authors": "Jianwen Luo, Yiming Huang, Jinxiang Meng, Fangyu Lei, Shizhu He, Xiao Liu, Shanshan Jiang, Bin Dong, Jun Zhao, Kang Liu",
+        "abstract": "Large Language Models (LLMs) have shown great promise in tool-making, yet\nexisting frameworks often struggle to efficiently construct reliable toolsets\nand are limited to single-task settings. To address these challenges, we\npropose GATE (Graph-based Adaptive Tool Evolution), an adaptive framework t...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14848v1",
+        "source_url": "http://arxiv.org/abs/2502.14848v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL",
+          "68T50",
+          "I.2.7"
+        ],
+        "fetched_date": "2025-02-21T01:42:09.244457"
+      },
+      {
+        "title": "Scaling Text-Rich Image Understanding via Code-Guided Synthetic Multimodal Data Generation",
+        "authors": "Yue Yang, Ajay Patel, Matt Deitke, Tanmay Gupta, Luca Weihs, Andrew Head, Mark Yatskar, Chris Callison-Burch, Ranjay Krishna, Aniruddha Kembhavi, Christopher Clark",
+        "abstract": "Reasoning about images with rich text, such as charts and documents, is a\ncritical application of vision-language models (VLMs). However, VLMs often\nstruggle in these domains due to the scarcity of diverse text-rich\nvision-language data. To address this challenge, we present CoSyn, a framework\nthat ...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14846v1",
+        "source_url": "http://arxiv.org/abs/2502.14846v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CV",
+          "cs.CL"
+        ],
+        "fetched_date": "2025-02-21T01:42:09.244457"
+      },
+      {
+        "title": "Revealing and Mitigating Over-Attention in Knowledge Editing",
+        "authors": "Pinzheng Wang, Zecheng Tang, Keyan Zhou, Juntao Li, Qiaoming Zhu, Min Zhang",
+        "abstract": "Large Language Models have demonstrated superior performance across a wide\nrange of tasks, but they still exhibit undesirable errors due to incorrect\nknowledge learned from the training data. To avoid this, knowledge editing\nmethods emerged to precisely edit the specific model knowledge via efficien...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14838v1",
+        "source_url": "http://arxiv.org/abs/2502.14838v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL",
+          "cs.AI"
+        ],
+        "fetched_date": "2025-02-21T01:42:09.244457"
+      },
+      {
+        "title": "Towards Economical Inference: Enabling DeepSeek's Multi-Head Latent Attention in Any Transformer-based LLMs",
+        "authors": "Tao Ji, Bin Guo, Yuanbin Wu, Qipeng Guo, Lixing Shen, Zhan Chen, Xipeng Qiu, Qi Zhang, Tao Gui",
+        "abstract": "Multi-head Latent Attention (MLA) is an innovative architecture proposed by\nDeepSeek, designed to ensure efficient and economical inference by\nsignificantly compressing the Key-Value (KV) cache into a latent vector.\nCompared to MLA, standard LLMs employing Multi-Head Attention (MHA) and its\nvariants...",
+        "date": "2025-02-20",
+        "pdf_url": "http://arxiv.org/pdf/2502.14837v1",
+        "source_url": "http://arxiv.org/abs/2502.14837v1",
+        "source": "arxiv",
+        "categories": [
+          "cs.CL",
+          "cs.AI"
+        ],
+        "fetched_date": "2025-02-21T01:42:09.244457"
+      }
+    ],
+    "papers_with_code": [],
+    "google_scholar": [],
+    "twitter": []
+  }
+}
