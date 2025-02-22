@@ -680,3 +680,53 @@ iframe, embed {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .top_container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .left_container,
+    .right_container {
+        width: 100%;
+        min-height: auto;
+    }
+
+    /* Clase para ocultar contenedor cuando se selecciona una sección */
+    .mobile-hidden {
+        display: none !important;
+    }
+
+    /* Clase para expandir contenedor a pantalla completa en móvil */
+    .mobile-fullscreen {
+        width: 100% !important;
+        height: 100vh !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    /* Botón para cerrar vista expandida en móvil */
+    .mobile-close-btn {
+        display: none;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .mobile-fullscreen .mobile-close-btn {
+        display: block;
+    }
+}

@@ -198,4 +198,74 @@ document.addEventListener('DOMContentLoaded', function() {
     loadPapers('papers_with_code');
     loadPapers('google_scholar');
     loadPapers('twitter');
+
+    // Función para detectar si es un dispositivo móvil
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
+    // Función para manejar la expansión/contracción de secciones en móvil
+    function handleMobileSection(section) {
+        if (!isMobile()) return;
+
+        const container = section.closest('.left_container') || section.closest('.right_container');
+        const oppositeContainer = container.classList.contains('left_container') 
+            ? document.querySelector('.right_container')
+            : document.querySelector('.left_container');
+
+        // Si la sección ya está expandida, la contraemos
+        if (section.classList.contains('mobile-fullscreen')) {
+            section.classList.remove('mobile-fullscreen');
+            oppositeContainer.classList.remove('mobile-hidden');
+            container.classList.remove('mobile-fullscreen');
+            
+            // Remover botón de cerrar si existe
+            const closeBtn = section.querySelector('.mobile-close-btn');
+            if (closeBtn) {
+                closeBtn.remove();
+            }
+        } else {
+            // Expandimos la sección
+            section.classList.add('mobile-fullscreen');
+            oppositeContainer.classList.add('mobile-hidden');
+            container.classList.add('mobile-fullscreen');
+
+            // Agregar botón de cerrar
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'mobile-close-btn';
+            closeBtn.textContent = '✕';
+            closeBtn.onclick = (e) => {
+                e.stopPropagation();
+                handleMobileSection(section);
+            };
+            section.appendChild(closeBtn);
+        }
+    }
+
+    // Agregar event listeners a todas las secciones
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('.left_container > div, .right_container > div');
+        
+        sections.forEach(section => {
+            section.addEventListener('click', () => {
+                handleMobileSection(section);
+            });
+        });
+
+        // Manejar cambios de tamaño de ventana
+        window.addEventListener('resize', () => {
+            if (!isMobile()) {
+                // Restaurar estado normal cuando se cambia a desktop
+                document.querySelectorAll('.mobile-fullscreen').forEach(el => {
+                    el.classList.remove('mobile-fullscreen');
+                });
+                document.querySelectorAll('.mobile-hidden').forEach(el => {
+                    el.classList.remove('mobile-hidden');
+                });
+                document.querySelectorAll('.mobile-close-btn').forEach(btn => {
+                    btn.remove();
+                });
+            }
+        });
+    });
 }); 
