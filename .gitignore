@@ -1,0 +1,5 @@
+my_site_env
+*.pyc
+daily_phrase.json
+papers_database.json
+

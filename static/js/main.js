@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(`/paper_status/${source}`)
             .then(response => response.json())
             .then(data => {
-                console.log(`Estado de ${source}:`, data);
+                // console.log(`Estado de ${source}:`, data);
                 if (data.status === 'completed') {
                     updatePaperSection(source, data.papers);
                 } else if (data.status === 'error') {
