@@ -4,7 +4,13 @@ import json
 from datetime import datetime
 import os
 from paper_fetchers import fetch_arxiv_papers, fetch_papers_with_code, fetch_google_scholar, fetch_twitter_papers
+from paper_storage import should_update_papers, get_stored_papers, update_source_papers
 from threading import Thread
+import logging
+
+# Configurar logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
@@ -90,6 +96,21 @@ def async_fetch_papers(source):
     """Función para cargar papers de forma asíncrona"""
     global loading_status
     try:
+        logger.info(f"Iniciando carga de papers para {source}")
+        
+        # Verificar si debemos actualizar los papers
+        if not should_update_papers():
+            logger.info(f"No es necesario actualizar papers para {source}, usando datos almacenados")
+            stored_papers = get_stored_papers()
+            loading_status[source] = {
+                'status': 'completed',
+                'papers': stored_papers.get(source, [])
+            }
+            return
+
+        # Si es necesario actualizar, proceder con la descarga
+        logger.info(f"Actualizando papers para {source}")
+        papers = []
         if source == 'arxiv':
             papers = fetch_arxiv_papers()
         elif source == 'papers_with_code':
@@ -98,16 +119,39 @@ def async_fetch_papers(source):
             papers = fetch_google_scholar()
         elif source == 'twitter':
             papers = fetch_twitter_papers()
+        
+        if papers:
+            # Actualizar el almacenamiento solo si obtuvimos papers
+            update_source_papers(source, papers)
+            loading_status[source] = {
+                'status': 'completed',
+                'papers': papers
+            }
+            logger.info(f"Actualización exitosa para {source}: {len(papers)} papers obtenidos")
+        else:
+            raise Exception(f"No se obtuvieron papers de {source}")
             
-        loading_status[source] = {
-            'status': 'completed',
-            'papers': papers
-        }
     except Exception as e:
+        logger.error(f"Error cargando papers de {source}: {str(e)}")
+        # Si hay error, intentar cargar los datos almacenados como fallback
+        try:
+            stored_papers = get_stored_papers()
+            stored_source_papers = stored_papers.get(source, [])
+            if stored_source_papers:
+                loading_status[source] = {
+                    'status': 'completed',
+                    'papers': stored_source_papers,
+                    'warning': 'Usando datos almacenados debido a un error de actualización'
+                }
+                logger.info(f"Usando datos almacenados como fallback para {source}")
+                return
+        except Exception as backup_error:
+            logger.error(f"Error al intentar cargar datos almacenados para {source}: {str(backup_error)}")
+        
         loading_status[source] = {
             'status': 'error',
             'papers': [],
-            'error': str(e)
+            'error': f"Error cargando papers: {str(e)}. Por favor intenta más tarde."
         }
 
 @app.route('/fetch_papers/<source>')
