@@ -76,6 +76,11 @@
                 <div class="preview-title">❓ Cuestionario</div>
                 <div class="quiz-container">
                     <div class="question-card">
+                        <div class="quiz-header">
+                            <button class="add-question-button" onclick="openAddQuestionModal(event)">
+                                <i class="fas fa-plus"></i> Agregar Pregunta
+                            </button>
+                        </div>
                         <p class="question-text" id="currentQuestion"></p>
                         <div class="answer-buttons">
                             <button class="quiz-button remember-button" onclick="handleAnswer(true, event)">
@@ -93,6 +98,40 @@
                                     <i class="fas fa-arrow-right"></i> Siguiente
                                 </button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal para agregar preguntas -->
+                <div id="addQuestionModal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Agregar Nueva Pregunta</h2>
+                            <button class="close-button" onclick="closeAddQuestionModal(event)">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="newQuestion">Pregunta:</label>
+                                <textarea id="newQuestion" rows="3" placeholder="Escribe aquí tu pregunta"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="newAnswer">Respuesta:</label>
+                                <textarea id="newAnswer" rows="3" placeholder="Escribe aquí la respuesta"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="newCategory">Categoría:</label>
+                                <input type="text" id="newCategory" placeholder="Ej: Historia, Ciencia, etc.">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="quiz-button cancel-button" onclick="closeAddQuestionModal(event)">
+                                <i class="fas fa-times"></i> Cancelar
+                            </button>
+                            <button class="quiz-button save-button" onclick="saveNewQuestion(event)">
+                                <i class="fas fa-save"></i> Guardar
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -218,7 +257,6 @@
     </div>
     
     <!-- Scripts -->
-    <script type="module" src="{{ url_for('static', filename='js/three-scene.js') }}"></script>
     <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
 </body>
