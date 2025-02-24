@@ -3,5 +3,9 @@ my_site_env
 daily_phrase.json
 papers_database.json
 __pycache__
-
+site_env
+.aider.*
+access.log
+error.log
+*.deb
 
