@@ -936,3 +936,78 @@ iframe, embed {
     font-weight: 500;
     letter-spacing: 0.5px;
 }
+
+/* Estilos para botones y contenedores de Animelon/JPDB */
+.dark-button {
+    display: block;
+    padding: 15px;
+    background: #2a2a3a;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-button:hover {
+    transform: scale(1.02);
+    background: #323245;
+}
+
+.dark-container {
+    background: #1f1f2f;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark-container-title {
+    margin: 0 0 10px 0;
+    color: #9f9fb0;
+    font-size: 0.9em;
+}
+
+.series-button {
+    display: block;
+    padding: 12px;
+    background: #252535;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+}
+
+.series-button:hover {
+    transform: scale(1.01);
+    background: #2d2d40;
+}
+
+.series-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.icon-green {
+    color: #7FE0A1;
+    margin-right: 8px;
+}
+
+.icon-pink {
+    color: #FF9ECD;
+    margin-right: 8px;
+}
+
+.icon-blue {
+    color: #90CAF9;
+    margin-right: 8px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
