@@ -74,7 +74,28 @@
             </div>
             <div class="cuestionario">
                 <div class="preview-title">❓ Cuestionario</div>
-                <div class="cuestionario">1.5</div>
+                <div class="quiz-container">
+                    <div class="question-card">
+                        <p class="question-text" id="currentQuestion"></p>
+                        <div class="answer-buttons">
+                            <button class="quiz-button remember-button" onclick="handleAnswer(true, event)">
+                                <i class="fas fa-check"></i> Me acuerdo
+                            </button>
+                            <button class="quiz-button dont-remember-button" onclick="handleAnswer(false, event)">
+                                <i class="fas fa-times"></i> No me acuerdo
+                            </button>
+                        </div>
+                        <div class="answer-container" style="display: none;">
+                            <p class="answer-text"></p>
+                            <div class="feedback-container">
+                                <p class="feedback-text"></p>
+                                <button class="quiz-button next-button" onclick="nextQuestion(event)">
+                                    <i class="fas fa-arrow-right"></i> Siguiente
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="idioma2">
                 <div class="preview-title">🇨🇳 Chino del día</div>
@@ -196,7 +217,9 @@
         </div>
     </div>
     
-    <!-- Agregar el script al final del body -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <!-- Scripts -->
+    <script type="module" src="{{ url_for('static', filename='js/three-scene.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
 </body>
 </html>

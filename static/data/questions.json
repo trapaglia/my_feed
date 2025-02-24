@@ -1,0 +1,28 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "¿Cuál es la fecha de inicio y final de la Primera Guerra Mundial?",
+            "answer": "28 de julio de 1914 - 11 de noviembre de 1918",
+            "category": "Historia"
+        },
+        {
+            "id": 2,
+            "question": "¿Cuál es la fecha de inicio y final de la Segunda Guerra Mundial?",
+            "answer": "1 de septiembre de 1939 - 2 de septiembre de 1945",
+            "category": "Historia"
+        },
+        {
+            "id": 3,
+            "question": "¿Cuándo se produjo la Revolución Rusa?",
+            "answer": "Febrero y Octubre de 1917",
+            "category": "Historia"
+        },
+        {
+            "id": 4,
+            "question": "¿Cuándo cayó el Muro de Berlín?",
+            "answer": "9 de noviembre de 1989",
+            "category": "Historia"
+        }
+    ]
+} 

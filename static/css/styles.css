@@ -1011,3 +1011,135 @@ iframe, embed {
     flex-direction: column;
     gap: 10px;
 }
+
+/* Estilos para el cuestionario */
+.quiz-container {
+    padding: 20px;
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuestionario.expanded {
+    flex: 1 !important;
+    min-height: 400px !important;
+}
+
+.cuestionario.expanded .quiz-container {
+    height: calc(100% - 40px);
+}
+
+.question-card {
+    background: #1f1f2f;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-text {
+    font-size: 1.2em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    width: 100%;
+}
+
+.answer-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Prevenir que los botones afecten el layout */
+.quiz-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.quiz-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+.remember-button {
+    background: #2ecc71;
+}
+
+.remember-button:hover {
+    background: #27ae60;
+    transform: translateY(-2px);
+}
+
+.dont-remember-button {
+    background: #e74c3c;
+}
+
+.dont-remember-button:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+.next-button {
+    background: #3498db;
+    margin-top: 15px;
+}
+
+.next-button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.answer-container {
+    background: #252535;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.answer-text {
+    color: #90CAF9;
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.feedback-text {
+    color: #9f9fb0;
+    font-size: 0.9em;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
