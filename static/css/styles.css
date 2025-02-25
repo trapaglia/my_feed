@@ -80,6 +80,18 @@ body {
     border-radius: 10px;
     padding: 15px;
     flex: 0 0 auto;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+#calendar iframe {
+    width: 100%;
+    height: calc(100% - 30px);
+    border: none;
+    flex: 1;
+}
+#calendar .preview-title {
+    margin-bottom: 15px;
 }
 .papers {
     flex: 1;
@@ -301,6 +313,14 @@ iframe, embed {
 
 #calendar.expanded {
     height: 90vh !important;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#calendar.expanded iframe {
+    flex: 1;
+    height: calc(100% - 45px);
 }
 
 .idioma1.expanded,
