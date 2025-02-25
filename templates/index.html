@@ -190,7 +190,22 @@
             </div>
             <div class="receta">
                 <div class="preview-title">🍳 Receta del día</div>
-                <div class="receta">2.5</div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">{{ receta.title }}</h3>
+                    <div class="recipe-info">
+                        <span class="recipe-time">⏱️ {{ receta.readyInMinutes }} minutos</span>
+                        <span class="recipe-servings">👥 {{ receta.servings }} porciones</span>
+                    </div>
+                    <p class="recipe-summary">{{ receta.summary | safe }}</p>
+                    <a href="{{ receta.sourceUrl }}" target="_blank" rel="noopener noreferrer" class="recipe-link">
+                        <i class="fas fa-external-link-alt"></i> Ver receta completa
+                    </a>
+                    {% if receta.image %}
+                    <div class="recipe-image">
+                        <img src="{{ receta.image }}" alt="{{ receta.title }}" loading="lazy">
+                    </div>
+                    {% endif %}
+                </div>
             </div>
             <div class="animelon">
                 <div class="preview-title">🎌 Animelon</div>

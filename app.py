@@ -5,6 +5,7 @@ from datetime import datetime
 import os
 from paper_fetchers import fetch_arxiv_papers, fetch_papers_with_code, fetch_google_scholar, fetch_twitter_papers
 from paper_storage import should_update_papers, get_stored_papers, update_source_papers
+from recipe_fetcher import get_daily_recipe
 from threading import Thread
 import logging
 
@@ -185,9 +186,11 @@ def index():
     }
     
     frase_del_dia = get_daily_phrase()
+    receta_del_dia = get_daily_recipe()
     return render_template('index.html', 
                          title='Daily Inspiration',
                          frase=frase_del_dia,
+                         receta=receta_del_dia,
                          loading_status=loading_status)
 
 @app.route('/css/<path:filename>')
