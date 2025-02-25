@@ -202,5 +202,76 @@ def js(filename):
 def data(filename):
     return send_from_directory('static/data', filename)
 
+@app.route('/fetch_papers/<source>')
+def fetch_papers(source):
+    """Endpoint para iniciar la carga asíncrona de papers"""
+    global loading_status
+    
+    if source not in loading_status:
+        return jsonify({'status': 'error', 'message': 'Fuente no válida'}), 400
+        
+    try:
+        if source == 'arxiv':
+            papers = fetch_arxiv_papers()
+        elif source == 'papers_with_code':
+            papers = fetch_papers_with_code()
+        elif source == 'google_scholar':
+            papers = fetch_google_scholar()
+        elif source == 'twitter':
+            papers = fetch_twitter_papers()
+            
+        if papers:
+            loading_status[source] = {
+                'status': 'completed',
+                'papers': papers
+            }
+        else:
+            # Intentar cargar datos almacenados
+            stored_papers = get_stored_papers()
+            if source in stored_papers and stored_papers[source]:
+                loading_status[source] = {
+                    'status': 'completed',
+                    'papers': stored_papers[source],
+                    'warning': 'Usando datos almacenados'
+                }
+            else:
+                loading_status[source] = {
+                    'status': 'error',
+                    'papers': [],
+                    'error': 'No se pudieron obtener papers'
+                }
+    except Exception as e:
+        logger.error(f"Error cargando papers de {source}: {str(e)}")
+        # Intentar cargar datos almacenados como fallback
+        try:
+            stored_papers = get_stored_papers()
+            if source in stored_papers and stored_papers[source]:
+                loading_status[source] = {
+                    'status': 'completed',
+                    'papers': stored_papers[source],
+                    'warning': 'Usando datos almacenados debido a un error'
+                }
+            else:
+                loading_status[source] = {
+                    'status': 'error',
+                    'papers': [],
+                    'error': f'Error: {str(e)}'
+                }
+        except Exception as backup_error:
+            loading_status[source] = {
+                'status': 'error',
+                'papers': [],
+                'error': f'Error: {str(e)}'
+            }
+    
+    return jsonify(loading_status[source])
+
+@app.route('/paper_status/<source>')
+def paper_status(source):
+    """Endpoint para verificar el estado de carga de papers"""
+    if source not in loading_status:
+        return jsonify({'status': 'error', 'message': 'Fuente no válida'}), 400
+    return jsonify(loading_status[source])
+
 if __name__ == '__main__':
     app.run(debug=True) 

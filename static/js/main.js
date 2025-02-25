@@ -113,32 +113,47 @@ document.addEventListener('DOMContentLoaded', function() {
     // Funciones para cargar papers
     function loadPapers(source) {
         fetch(`/fetch_papers/${source}`)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
-                checkPaperStatus(source);
+                if (data.status === 'completed') {
+                    updatePaperSection(source, data.papers);
+                } else if (data.status === 'error') {
+                    showError(source, data.error || 'Error desconocido');
+                } else {
+                    checkPaperStatus(source);
+                }
             })
             .catch(error => {
                 console.error('Error iniciando la carga:', error);
-                showError(source);
+                showError(source, 'Error de conexión. Por favor, intenta más tarde.');
             });
     }
 
     function checkPaperStatus(source) {
         fetch(`/paper_status/${source}`)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
-                // console.log(`Estado de ${source}:`, data);
                 if (data.status === 'completed') {
                     updatePaperSection(source, data.papers);
                 } else if (data.status === 'error') {
-                    showError(source);
+                    showError(source, data.error || 'Error desconocido');
                 } else {
                     setTimeout(() => checkPaperStatus(source), 2000);
                 }
             })
             .catch(error => {
                 console.error('Error verificando estado:', error);
-                showError(source);
+                showError(source, 'Error de conexión. Por favor, intenta más tarde.');
             });
     }
 
@@ -159,17 +174,17 @@ document.addEventListener('DOMContentLoaded', function() {
         papers.forEach(paper => {
             html += `
                 <div class="paper-item">
-                    <h4><a href="${paper.source_url}" target="_blank">${paper.title}</a></h4>
+                    <h4><a href="${paper.source_url}" target="_blank" rel="noopener noreferrer">${paper.title}</a></h4>
                     <p class="paper-authors">${paper.authors}</p>
-                    <p class="paper-abstract">${paper.abstract}</p>
+                    <p class="paper-abstract">${paper.abstract || 'No hay resumen disponible.'}</p>
                     <div class="paper-meta">
                         <div class="paper-info">
                             <span class="paper-date">${paper.date}</span>
                             ${paper.citations !== undefined ? `<span class="paper-citations">📚 ${paper.citations} citas</span>` : ''}
                         </div>
                         <div class="paper-links">
-                            ${paper.pdf_url ? `<a href="${paper.pdf_url}" target="_blank" class="paper-pdf">PDF</a>` : ''}
-                            ${paper.repository_url ? `<a href="${paper.repository_url}" target="_blank" class="paper-code"><i class="fas fa-code"></i> Repository</a>` : ''}
+                            ${paper.pdf_url ? `<a href="${paper.pdf_url}" target="_blank" rel="noopener noreferrer" class="paper-pdf">PDF</a>` : ''}
+                            ${paper.repository_url ? `<a href="${paper.repository_url}" target="_blank" rel="noopener noreferrer" class="paper-code"><i class="fas fa-code"></i> Repository</a>` : ''}
                         </div>
                     </div>
                 </div>
@@ -180,10 +195,15 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = html;
     }
 
-    function showError(source) {
+    function showError(source, message) {
         const container = document.querySelector(`.paper-section[data-source="${source}"] .paper-list`);
         if (container) {
-            container.innerHTML = '<p class="error-message">Error cargando papers. Por favor, intenta más tarde.</p>';
+            container.innerHTML = `
+                <div class="error-message">
+                    <i class="fas fa-exclamation-circle"></i>
+                    ${message}
+                </div>
+            `;
             container.closest('.paper-section').classList.remove('loading');
         }
     }

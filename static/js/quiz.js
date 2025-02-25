@@ -51,9 +51,18 @@ function prioritizeQuestions() {
             .then(response => response.json())
             .then(data => {
                 questions = data.questions;
-                shuffleQuestions();
+                shuffleArray(questions);
             });
     }
+}
+
+// Función para mezclar un array (Fisher-Yates shuffle)
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
 // Función para calcular el próximo intervalo
