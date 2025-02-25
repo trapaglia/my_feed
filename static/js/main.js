@@ -84,11 +84,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const japaneseIframe = document.querySelector('.idioma1 iframe');
     const chineseIframe = document.querySelector('.idioma2 iframe');
     const calendarIframe = document.querySelector('#calendar iframe');
+    const mangaEmbed = document.querySelector('.manga embed');
 
     handleContentLoad(pdfEmbed, 'pdf-skeleton');
     handleContentLoad(japaneseIframe, 'japanese-skeleton');
     handleContentLoad(chineseIframe, 'chinese-skeleton');
     handleContentLoad(calendarIframe, 'calendar-skeleton');
+    handleContentLoad(mangaEmbed, 'manga-skeleton');
 
     // Función para manejar errores
     function handleLoadError(element, skeletonId) {
@@ -106,8 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Aplicar manejo de errores a todos los elementos
-    [pdfEmbed, japaneseIframe, chineseIframe, calendarIframe].forEach((element, index) => {
-        handleLoadError(element, ['pdf-skeleton', 'japanese-skeleton', 'chinese-skeleton', 'calendar-skeleton'][index]);
+    [pdfEmbed, japaneseIframe, chineseIframe, calendarIframe, mangaEmbed].forEach((element, index) => {
+        handleLoadError(element, ['pdf-skeleton', 'japanese-skeleton', 'chinese-skeleton', 'calendar-skeleton', 'manga-skeleton'][index]);
     });
 
     // Funciones para cargar papers

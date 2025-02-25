@@ -207,6 +207,21 @@
                     {% endif %}
                 </div>
             </div>
+            <div class="manga">
+                <div class="preview-title">📖 Manga del día</div>
+                <div class="skeleton" id="manga-skeleton">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Cargando manga...</div>
+                </div>
+                <embed 
+                    src="{{ url_for('static', filename='data/001 [JP] Yotsubato.pdf') }}#view=FitH"
+                    type="application/pdf"
+                    width="100%"
+                    height="100%"
+                    style="display: none;"
+                    onload="this.style.display='block'; document.getElementById('manga-skeleton').style.display='none';"
+                >
+            </div>
             <div class="animelon">
                 <div class="preview-title">🎌 Animelon</div>
                 <div class="button-container">
