@@ -1,10 +1,11 @@
-from flask import Flask, render_template, send_from_directory, jsonify
+from flask import Flask, render_template, send_from_directory, jsonify, request
 import random
 import json
 from datetime import datetime
 import os
 from paper_fetchers import fetch_arxiv_papers, fetch_papers_with_code, fetch_google_scholar, fetch_twitter_papers
 from paper_storage import should_update_papers, get_stored_papers, update_source_papers
+from recipe_fetcher import get_daily_recipe
 from threading import Thread
 import logging
 
@@ -183,19 +184,53 @@ def index():
         'twitter': {'status': 'pending', 'papers': []}
     }
     
-    frase_del_dia = get_daily_phrase()
+    # Definir receta por defecto
+    receta_del_dia = {
+        'title': 'Ensalada Mediterránea',
+        'summary': 'Una refrescante ensalada con tomates, pepinos, aceitunas y queso feta.',
+        'sourceUrl': 'https://www.recetasgratis.net/receta-de-ensalada-mediterranea-59615.html',
+        'image': '',
+        'readyInMinutes': 15,
+        'servings': 4
+    }
+    
+    try:
+        logger.info("Obteniendo frase del día...")
+        frase_del_dia = get_daily_phrase()
+        
+        logger.info("Obteniendo receta del día...")
+        receta_temp = get_daily_recipe()
+        if receta_temp:
+            logger.info("Receta obtenida exitosamente")
+            receta_del_dia = receta_temp
+        else:
+            logger.warning("No se pudo obtener la receta, usando receta por defecto")
+            
+    except Exception as e:
+        logger.error(f"Error obteniendo datos diarios: {str(e)}")
+        frase_del_dia = {
+            "texto": "Focus your energy on your aura goal",
+            "categoria": "Energía"
+        }
+    
+    logger.info(f"Renderizando template con receta: {receta_del_dia}")
     return render_template('index.html', 
                          title='Daily Inspiration',
                          frase=frase_del_dia,
+                         receta=receta_del_dia,
                          loading_status=loading_status)
 
 @app.route('/css/<path:filename>')
 def css(filename):
-    return send_from_directory('css', filename)
+    return send_from_directory('static/css', filename)
 
 @app.route('/js/<path:filename>')
 def js(filename):
     return send_from_directory('static/js', filename)
+
+@app.route('/static/data/<path:filename>')
+def data(filename):
+    return send_from_directory('static/data', filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
