@@ -232,6 +232,115 @@ def js(filename):
 def data(filename):
     return send_from_directory('static/data', filename)
 
+@app.route('/add_question', methods=['POST'])
+def add_question():
+    try:
+        data = request.get_json()
+        logger.info(f"Recibiendo nueva pregunta: {data}")
+        
+        # Validar los datos recibidos
+        if not all(key in data for key in ['question', 'answer', 'category']):
+            logger.error("Faltan campos requeridos en la pregunta")
+            return jsonify({'success': False, 'message': 'Faltan campos requeridos'}), 400
+            
+        # Definir la ruta correcta al archivo questions.json
+        questions_file = os.path.join('static', 'data', 'questions.json')
+        logger.info(f"Intentando guardar pregunta en: {questions_file}")
+        
+        # Crear el directorio si no existe
+        os.makedirs(os.path.dirname(questions_file), exist_ok=True)
+        
+        # Cargar las preguntas existentes o crear estructura inicial
+        try:
+            if os.path.exists(questions_file):
+                with open(questions_file, 'r', encoding='utf-8') as file:
+                    questions_data = json.load(file)
+            else:
+                questions_data = {"questions": []}
+        except Exception as e:
+            logger.error(f"Error leyendo el archivo de preguntas: {str(e)}")
+            questions_data = {"questions": []}
+            
+        # Crear nueva pregunta con ID y estadísticas iniciales
+        new_id = len(questions_data["questions"]) + 1
+        new_question = {
+            'id': new_id,
+            'question': data['question'],
+            'answer': data['answer'],
+            'category': data['category'],
+            'stats': {
+                'correct_count': 0,
+                'incorrect_count': 0,
+                'last_reviewed': None,
+                'next_review': None,
+                'interval': 1
+            }
+        }
+        
+        # Agregar la nueva pregunta
+        questions_data["questions"].append(new_question)
+        
+        # Guardar el archivo actualizado
+        try:
+            with open(questions_file, 'w', encoding='utf-8') as file:
+                json.dump(questions_data, file, ensure_ascii=False, indent=4)
+            logger.info("Pregunta guardada exitosamente")
+            return jsonify({'success': True, 'message': 'Pregunta agregada exitosamente'})
+        except Exception as e:
+            logger.error(f"Error escribiendo en el archivo: {str(e)}")
+            return jsonify({'success': False, 'message': f'Error al guardar la pregunta: {str(e)}'}), 500
+            
+    except Exception as e:
+        logger.error(f"Error general al guardar la pregunta: {str(e)}")
+        return jsonify({'success': False, 'message': f'Error al guardar la pregunta: {str(e)}'}), 500
+
+@app.route('/update_question_stats', methods=['POST'])
+def update_question_stats():
+    try:
+        question = request.get_json()
+        logger.info(f"Actualizando estadísticas para pregunta ID: {question.get('id')}")
+        
+        # Validar los datos recibidos
+        if not question or 'id' not in question or 'stats' not in question:
+            logger.error("Datos inválidos en la actualización de estadísticas")
+            return jsonify({'success': False, 'message': 'Datos inválidos'}), 400
+            
+        # Cargar las preguntas existentes
+        questions_file = os.path.join('static', 'data', 'questions.json')
+        
+        try:
+            with open(questions_file, 'r', encoding='utf-8') as file:
+                questions_data = json.load(file)
+        except FileNotFoundError:
+            logger.error("Archivo de preguntas no encontrado")
+            return jsonify({'success': False, 'message': 'Archivo de preguntas no encontrado'}), 404
+            
+        # Actualizar la pregunta específica
+        updated = False
+        for i, q in enumerate(questions_data['questions']):
+            if q['id'] == question['id']:
+                questions_data['questions'][i]['stats'] = question['stats']
+                updated = True
+                break
+        
+        if not updated:
+            logger.error(f"No se encontró la pregunta con ID: {question['id']}")
+            return jsonify({'success': False, 'message': 'Pregunta no encontrada'}), 404
+        
+        # Guardar los cambios
+        try:
+            with open(questions_file, 'w', encoding='utf-8') as file:
+                json.dump(questions_data, file, ensure_ascii=False, indent=4)
+            logger.info("Estadísticas actualizadas exitosamente")
+            return jsonify({'success': True})
+        except Exception as e:
+            logger.error(f"Error guardando las estadísticas: {str(e)}")
+            return jsonify({'success': False, 'message': str(e)}), 500
+            
+    except Exception as e:
+        logger.error(f"Error general actualizando estadísticas: {str(e)}")
+        return jsonify({'success': False, 'message': str(e)}), 500
+
 if __name__ == '__main__':
     app.run(debug=True)
 

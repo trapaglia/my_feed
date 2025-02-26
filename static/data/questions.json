@@ -51,6 +51,19 @@
                 "next_review": "2025-02-26T23:42:32.002Z",
                 "interval": 2
             }
+        },
+        {
+            "id": 5,
+            "question": "目の前に立ちはだかる高い高い壁",
+            "answer": "menomae ni tachihadakaru takai takai kabe",
+            "category": "Japones",
+            "stats": {
+                "correct_count": 0,
+                "incorrect_count": 0,
+                "last_reviewed": null,
+                "next_review": null,
+                "interval": 1
+            }
         }
     ]
 }
