@@ -124,6 +124,7 @@ function showQuestion() {
     const questionElement = document.getElementById('currentQuestion');
     const answerContainer = document.querySelector('.answer-container');
     const answerButtons = document.querySelector('.answer-buttons');
+    const evaluationButtons = document.querySelector('.evaluation-buttons');
     
     if (currentQuestionIndex >= questions.length) {
         // Si se acabaron las preguntas, volver a cargar
@@ -133,6 +134,7 @@ function showQuestion() {
         if (questions.length === 0) {
             questionElement.textContent = '¡Has completado todas las preguntas por ahora! Vuelve más tarde para repasar.';
             answerButtons.style.display = 'none';
+            evaluationButtons.style.display = 'none';
             return;
         }
     }
@@ -152,6 +154,32 @@ function showQuestion() {
     // Resetear la interfaz
     answerContainer.style.display = 'none';
     answerButtons.style.display = 'flex';
+    evaluationButtons.style.display = 'none';
+}
+
+// Función para mostrar la respuesta
+function showAnswer(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    
+    const currentQuestion = questions[currentQuestionIndex];
+    const answerContainer = document.querySelector('.answer-container');
+    const answerText = document.querySelector('.answer-text');
+    const answerButtons = document.querySelector('.answer-buttons');
+    const evaluationButtons = document.querySelector('.evaluation-buttons');
+    
+    // Mostrar la respuesta
+    answerText.textContent = currentQuestion.answer;
+    answerContainer.style.display = 'block';
+    
+    // Ocultar el botón de mostrar respuesta y mostrar los botones de evaluación
+    answerButtons.style.display = 'none';
+    evaluationButtons.style.display = 'flex';
+    
+    // Mantener el contenedor expandido
+    const quizContainer = document.querySelector('.cuestionario');
+    quizContainer.classList.add('expanded');
+    quizContainer.classList.remove('contracted');
 }
 
 // Manejar la respuesta del usuario
@@ -160,16 +188,11 @@ async function handleAnswer(remembered, event) {
     event.stopPropagation();
     
     const currentQuestion = questions[currentQuestionIndex];
-    const answerContainer = document.querySelector('.answer-container');
-    const answerText = document.querySelector('.answer-text');
     const feedbackText = document.querySelector('.feedback-text');
-    const answerButtons = document.querySelector('.answer-buttons');
+    const evaluationButtons = document.querySelector('.evaluation-buttons');
     
     // Actualizar estadísticas
     await updateQuestionStats(currentQuestion, remembered);
-    
-    // Mostrar la respuesta
-    answerText.textContent = currentQuestion.answer;
     
     // Mostrar feedback según si el usuario recordó o no
     feedbackText.textContent = remembered ? 
@@ -177,8 +200,8 @@ async function handleAnswer(remembered, event) {
         'No te preocupes, repasaremos esta pregunta más frecuentemente.';
     
     // Actualizar la interfaz
-    answerContainer.style.display = 'block';
-    answerButtons.style.display = 'none';
+    evaluationButtons.style.display = 'none';
+    document.querySelector('.feedback-container').style.display = 'block';
     
     // Mantener el contenedor expandido
     const quizContainer = document.querySelector('.cuestionario');
@@ -188,7 +211,6 @@ async function handleAnswer(remembered, event) {
 
 // Pasar a la siguiente pregunta
 function nextQuestion(event) {
-    // Prevenir el comportamiento por defecto
     event.preventDefault();
     event.stopPropagation();
     
@@ -199,6 +221,9 @@ function nextQuestion(event) {
     const quizContainer = document.querySelector('.cuestionario');
     quizContainer.classList.add('expanded');
     quizContainer.classList.remove('contracted');
+    
+    // Resetear la interfaz de feedback
+    document.querySelector('.feedback-container').style.display = 'none';
 }
 
 // Funciones para el modal de agregar preguntas
