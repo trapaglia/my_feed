@@ -125,6 +125,8 @@ function showQuestion() {
     const answerContainer = document.querySelector('.answer-container');
     const answerButtons = document.querySelector('.answer-buttons');
     const evaluationButtons = document.querySelector('.evaluation-buttons');
+    const imageContainer = document.getElementById('questionImageContainer');
+    const questionImage = document.getElementById('questionImage');
     
     if (currentQuestionIndex >= questions.length) {
         // Si se acabaron las preguntas, volver a cargar
@@ -135,12 +137,27 @@ function showQuestion() {
             questionElement.textContent = '¡Has completado todas las preguntas por ahora! Vuelve más tarde para repasar.';
             answerButtons.style.display = 'none';
             evaluationButtons.style.display = 'none';
+            imageContainer.style.display = 'none';
             return;
         }
     }
     
     const currentQuestion = questions[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
+    
+    // Mostrar imagen si existe
+    if (currentQuestion.image) {
+        questionImage.src = `/static/${currentQuestion.image}`;
+        imageContainer.style.display = 'block';
+        
+        // Manejar errores de carga de imagen
+        questionImage.onerror = () => {
+            imageContainer.style.display = 'none';
+            console.error('Error al cargar la imagen de la pregunta');
+        };
+    } else {
+        imageContainer.style.display = 'none';
+    }
     
     // Mostrar estadísticas si existen
     if (currentQuestion.stats) {
@@ -253,12 +270,35 @@ function closeAddQuestionModal(event) {
     document.getElementById('newQuestion').value = '';
     document.getElementById('newAnswer').value = '';
     document.getElementById('newCategory').value = '';
+    document.getElementById('newImage').value = '';
+    document.getElementById('imagePreview').style.display = 'none';
     
     // Mantener el contenedor expandido
     const quizContainer = document.querySelector('.cuestionario');
     quizContainer.classList.add('expanded');
     quizContainer.classList.remove('contracted');
 }
+
+// Función para manejar la previsualización de imágenes
+function handleImagePreview(event) {
+    const file = event.target.files[0];
+    const imagePreview = document.getElementById('imagePreview');
+    
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            imagePreview.src = e.target.result;
+            imagePreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    } else {
+        imagePreview.src = '';
+        imagePreview.style.display = 'none';
+    }
+}
+
+// Agregar el event listener para la previsualización de imágenes
+document.getElementById('newImage').addEventListener('change', handleImagePreview);
 
 async function saveNewQuestion(event) {
     // Prevenir que el evento se propague al contenedor padre
@@ -268,10 +308,30 @@ async function saveNewQuestion(event) {
     const question = document.getElementById('newQuestion').value.trim();
     const answer = document.getElementById('newAnswer').value.trim();
     const category = document.getElementById('newCategory').value.trim();
+    const imageInput = document.getElementById('newImage');
+    let imageData = null;
 
     if (!question || !answer || !category) {
-        alert('Por favor completa todos los campos');
+        alert('Por favor completa todos los campos obligatorios');
         return;
+    }
+
+    // Procesar la imagen si existe
+    if (imageInput.files && imageInput.files[0]) {
+        const file = imageInput.files[0];
+        const reader = new FileReader();
+        
+        try {
+            imageData = await new Promise((resolve, reject) => {
+                reader.onload = e => resolve(e.target.result);
+                reader.onerror = () => reject(new Error('Error al leer la imagen'));
+                reader.readAsDataURL(file);
+            });
+        } catch (error) {
+            console.error('Error procesando la imagen:', error);
+            alert('Error al procesar la imagen. Por favor, intenta de nuevo.');
+            return;
+        }
     }
 
     try {
@@ -283,7 +343,8 @@ async function saveNewQuestion(event) {
             body: JSON.stringify({
                 question: question,
                 answer: answer,
-                category: category
+                category: category,
+                image: imageData
             })
         });
 
@@ -292,6 +353,12 @@ async function saveNewQuestion(event) {
             if (result.success) {
                 alert('Pregunta agregada exitosamente');
                 closeAddQuestionModal(event);
+                // Limpiar el formulario
+                document.getElementById('newQuestion').value = '';
+                document.getElementById('newAnswer').value = '';
+                document.getElementById('newCategory').value = '';
+                document.getElementById('newImage').value = '';
+                document.getElementById('imagePreview').style.display = 'none';
                 // Recargar las preguntas
                 loadQuestions();
             } else {
@@ -304,11 +371,6 @@ async function saveNewQuestion(event) {
         console.error('Error:', error);
         alert('Error al guardar la pregunta');
     }
-    
-    // Mantener el contenedor expandido
-    const quizContainer = document.querySelector('.cuestionario');
-    quizContainer.classList.add('expanded');
-    quizContainer.classList.remove('contracted');
 }
 
 // Prevenir que los clics dentro del modal se propaguen al contenedor padre

@@ -6,11 +6,11 @@
             "answer": "28 de julio de 1914 - 11 de noviembre de 1918",
             "category": "Historia",
             "stats": {
-                "correct_count": 1,
+                "correct_count": 2,
                 "incorrect_count": 0,
-                "last_reviewed": "2025-02-24T23:41:52.942Z",
-                "next_review": "2025-02-26T23:41:52.942Z",
-                "interval": 2
+                "last_reviewed": "2025-02-27T03:35:59.899Z",
+                "next_review": "2025-03-03T03:35:59.899Z",
+                "interval": 4
             }
         },
         {
@@ -20,10 +20,10 @@
             "category": "Historia",
             "stats": {
                 "correct_count": 1,
-                "incorrect_count": 0,
-                "last_reviewed": "2025-02-24T23:42:01.682Z",
-                "next_review": "2025-02-26T23:42:01.682Z",
-                "interval": 2
+                "incorrect_count": 1,
+                "last_reviewed": "2025-02-27T03:36:29.917Z",
+                "next_review": "2025-02-28T03:36:29.917Z",
+                "interval": 1
             }
         },
         {
@@ -32,11 +32,11 @@
             "answer": "Febrero y Octubre de 1917",
             "category": "Historia",
             "stats": {
-                "correct_count": 0,
+                "correct_count": 1,
                 "incorrect_count": 1,
-                "last_reviewed": "2025-02-24T23:42:07.656Z",
-                "next_review": "2025-02-25T23:42:07.656Z",
-                "interval": 1
+                "last_reviewed": "2025-02-27T03:35:53.301Z",
+                "next_review": "2025-03-01T03:35:53.301Z",
+                "interval": 2
             }
         },
         {
@@ -59,11 +59,11 @@
             "category": "Japones",
             "image": "images/questions\\question_5.jpg",
             "stats": {
-                "correct_count": 0,
+                "correct_count": 1,
                 "incorrect_count": 0,
-                "last_reviewed": null,
-                "next_review": null,
-                "interval": 1
+                "last_reviewed": "2025-02-27T03:35:39.338Z",
+                "next_review": "2025-03-01T03:35:39.338Z",
+                "interval": 2
             }
         }
     ]
