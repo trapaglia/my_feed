@@ -17,6 +17,7 @@
     
     <!-- Estilos -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
@@ -82,6 +83,9 @@
                             </button>
                         </div>
                         <p class="question-text" id="currentQuestion"></p>
+                        <div class="question-image-container" id="questionImageContainer" style="display: none;">
+                            <img class="question-image" id="questionImage">
+                        </div>
                         <div class="answer-buttons">
                             <button class="quiz-button show-answer-button" onclick="showAnswer(event)">
                                 <i class="fas fa-eye"></i> Mostrar Respuesta
@@ -128,6 +132,16 @@
                             <div class="form-group">
                                 <label for="newCategory">Categoría:</label>
                                 <input type="text" id="newCategory" placeholder="Ej: Historia, Ciencia, etc.">
+                            </div>
+                            <div class="form-group">
+                                <label for="newImage">Imagen (opcional):</label>
+                                <div class="image-upload-container">
+                                    <input type="file" id="newImage" accept="image/*" style="display: none;">
+                                    <div class="image-upload-button" onclick="document.getElementById('newImage').click()">
+                                        <i class="fas fa-cloud-upload-alt"></i> Subir imagen
+                                    </div>
+                                    <img id="imagePreview" class="image-preview">
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -336,7 +350,6 @@
     </div>
     
     <!-- Scripts -->
-    <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
 </body>
 </html>

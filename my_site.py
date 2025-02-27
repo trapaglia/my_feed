@@ -8,12 +8,16 @@ from paper_storage import should_update_papers, get_stored_papers, update_source
 from recipe_fetcher import get_daily_recipe
 from threading import Thread
 import logging
+import base64
+from werkzeug.utils import secure_filename
 
 # Configurar logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'static/images/questions'
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max-limit
 
 # Variable global para almacenar el estado de carga
 loading_status = {
@@ -232,6 +236,10 @@ def js(filename):
 def data(filename):
     return send_from_directory('static/data', filename)
 
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 @app.route('/add_question', methods=['POST'])
 def add_question():
     try:
@@ -243,6 +251,26 @@ def add_question():
             logger.error("Faltan campos requeridos en la pregunta")
             return jsonify({'success': False, 'message': 'Faltan campos requeridos'}), 400
             
+        # Procesar la imagen si está presente
+        image_path = None
+        if 'image' in data and data['image']:
+            try:
+                # Decodificar la imagen base64
+                image_data = base64.b64decode(data['image'].split(',')[1])
+                # Crear un nombre único para la imagen
+                filename = secure_filename(f"question_{len(get_stored_questions()) + 1}.jpg")
+                # Asegurar que el directorio existe
+                os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+                # Guardar la imagen
+                image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                with open(image_path, 'wb') as f:
+                    f.write(image_data)
+                # Convertir la ruta a relativa para almacenamiento
+                image_path = os.path.join('images/questions', filename)
+            except Exception as e:
+                logger.error(f"Error procesando la imagen: {str(e)}")
+                return jsonify({'success': False, 'message': f'Error procesando la imagen: {str(e)}'}), 500
+
         # Definir la ruta correcta al archivo questions.json
         questions_file = os.path.join('static', 'data', 'questions.json')
         logger.info(f"Intentando guardar pregunta en: {questions_file}")
@@ -268,6 +296,7 @@ def add_question():
             'question': data['question'],
             'answer': data['answer'],
             'category': data['category'],
+            'image': image_path,
             'stats': {
                 'correct_count': 0,
                 'incorrect_count': 0,
@@ -293,6 +322,14 @@ def add_question():
     except Exception as e:
         logger.error(f"Error general al guardar la pregunta: {str(e)}")
         return jsonify({'success': False, 'message': f'Error al guardar la pregunta: {str(e)}'}), 500
+
+def get_stored_questions():
+    """Función auxiliar para obtener las preguntas almacenadas"""
+    questions_file = os.path.join('static', 'data', 'questions.json')
+    if os.path.exists(questions_file):
+        with open(questions_file, 'r', encoding='utf-8') as file:
+            return json.load(file)["questions"]
+    return []
 
 @app.route('/update_question_stats', methods=['POST'])
 def update_question_stats():

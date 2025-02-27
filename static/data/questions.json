@@ -55,13 +55,14 @@
         {
             "id": 5,
             "question": "目の前に立ちはだかる高い高い壁",
-            "answer": "menomae ni tachihadakaru takai takai kabe",
+            "answer": "menomae ni tachihadakaru takai takai kabe\nen frente mio se interponia un alto alto obstaculo",
             "category": "Japones",
+            "image": "images/questions\\question_5.jpg",
             "stats": {
                 "correct_count": 0,
-                "incorrect_count": 1,
-                "last_reviewed": "2025-02-26T01:46:13.851Z",
-                "next_review": "2025-02-27T01:46:13.851Z",
+                "incorrect_count": 0,
+                "last_reviewed": null,
+                "next_review": null,
                 "interval": 1
             }
         }
