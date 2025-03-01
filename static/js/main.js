@@ -290,4 +290,47 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Función para manejar el seguimiento de la página del PDF
+    function setupPDFTracking() {
+        const pdfViewer = document.getElementById('pdfViewer');
+        if (!pdfViewer) return;
+
+        // Intentar cargar la última página guardada
+        const lastPage = localStorage.getItem('lastPDFPage');
+        if (lastPage) {
+            pdfViewer.src = pdfViewer.src + '#page=' + lastPage;
+        }
+
+        // Observar cambios en el PDF
+        window.addEventListener('message', function(e) {
+            // Los eventos del visor de PDF se reciben aquí
+            try {
+                if (e.data && typeof e.data === 'object') {
+                    if (e.data.type === 'pagechange' || e.data.type === 'documentload') {
+                        const currentPage = e.data.page;
+                        localStorage.setItem('lastPDFPage', currentPage);
+                        console.log('Página guardada:', currentPage);
+                    }
+                }
+            } catch (error) {
+                console.error('Error al guardar la página:', error);
+            }
+        });
+
+        // Guardar la página antes de cerrar la ventana
+        window.addEventListener('beforeunload', function() {
+            try {
+                if (pdfViewer.contentWindow) {
+                    const currentPage = pdfViewer.contentWindow.PDFViewerApplication.page;
+                    localStorage.setItem('lastPDFPage', currentPage);
+                }
+            } catch (error) {
+                console.error('Error al guardar la página antes de cerrar:', error);
+            }
+        });
+    }
+
+    // Inicializar el seguimiento del PDF
+    setupPDFTracking();
 }); 

@@ -200,7 +200,8 @@
                     <div class="loading-text">Cargando PDF...</div>
                 </div>
                 <embed 
-                    src="{{ url_for('static', filename='/data/Pensar Rapido, Pensar Despacio.pdf') }}#view=FitH" 
+                    id="pdfViewer"
+                    src="{{ url_for('static', filename='/data/Pensar Rapido, Pensar Despacio.pdf') }}" 
                     type="application/pdf" 
                     width="100%" 
                     height="100%"
