@@ -233,11 +233,21 @@ iframe, embed {
     background-color: white;
     transition: all 0.3s ease;
 }
-.idioma1{
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 15px;
+.idioma1 {
+    min-height: 100px;
+    transition: all 0.3s ease;
 }
+
+.idioma1.expanded {
+    height: 80vh;
+    min-height: 600px;
+}
+
+.idioma1.expanded iframe {
+    height: 700px;
+    opacity: 1;
+}
+
 .idioma2{
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
