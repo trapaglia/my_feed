@@ -1,4 +1,5 @@
 my_site_env
+my_env
 *.pyc
 daily_phrase.json
 papers_database.json

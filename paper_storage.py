@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 STORAGE_FILE = 'static/data/papers_database.json'
 if not os.path.exists(STORAGE_FILE):
-    STORAGE_FILE = '/home/matiasdanmansilla/projects/my_feed/static/data/papers_database.json'
+    STORAGE_FILE = '/home/matiasdanmansilla/my_feed/static/data/papers_database.json'
 
 def should_update_papers():
     """

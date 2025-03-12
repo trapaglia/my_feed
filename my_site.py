@@ -29,10 +29,9 @@ loading_status = {
 
 def get_daily_phrase():
     # Ruta al archivo que almacenará la frase del día
-    base_dir = '/home/matiasdanmansilla/projects/my_feed/'
-    if __name__ == '__main__':
-        base_dir = ''
-    storage_file = os.path.join(base_dir, 'static/data/daily_phrase.json')
+    storage_file = os.path.join('static','data','daily_phrase.json')
+    if not os.path.exists(storage_file):
+        storage_file = os.path.join("/home/matiasdanmansilla/my_feed", storage_file)
 
     # Obtener la fecha actual (solo año, mes, día)
     today = datetime.now().strftime('%Y-%m-%d')
@@ -273,6 +272,8 @@ def add_question():
 
         # Definir la ruta correcta al archivo questions.json
         questions_file = os.path.join('static', 'data', 'questions.json')
+        if not os.path.exists(questions_file):
+            questions_file = os.path.join("/home/matiasdanmansilla/my_feed",'static', 'data', 'questions.json')
         logger.info(f"Intentando guardar pregunta en: {questions_file}")
         
         # Crear el directorio si no existe
