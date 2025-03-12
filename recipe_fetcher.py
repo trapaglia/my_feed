@@ -6,9 +6,15 @@ import os
 from dotenv import load_dotenv
 
 # Cargar variables de entorno desde .env
-load_dotenv()
+dotenv_path = "/home/matiasdanmansilla/my_feed/.env"
+if not os.path.exists(dotenv_path):
+    load_dotenv()
+else:
+    load_dotenv(dotenv_path)
 
 STORAGE_FILE = 'static/data/daily_recipe.json'
+if not os.path.exists(STORAGE_FILE):
+    STORAGE_FILE = '/home/matiasdanmansilla/my_feed/static/data/daily_recipe.json'
 
 def fetch_vegetarian_recipe():
     """Obtiene una receta vegetariana aleatoria de la API de Spoonacular"""
